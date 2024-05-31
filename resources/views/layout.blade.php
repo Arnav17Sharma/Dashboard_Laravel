@@ -6,10 +6,9 @@
         <title>@yield('title', 'Default')</title>
         @yield('csslinks')
     </head>
-    <body>
     @include('include.navbar')
     @include('include.header')
-    <main class="nxl-container">
+    <main class="nxl-container apps-container apps-calendar">
         <div class="nxl-content">
             @yield('content')
         </div>

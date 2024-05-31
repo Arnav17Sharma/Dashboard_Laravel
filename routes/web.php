@@ -20,4 +20,24 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
+
+Route::get('/reports', function () {
+    return view('reports');
+})->name('reports');
+
+Route::get('/calendar', function () {
+    return view('calendar');
+})->name('calendar');
+
+Route::get('/tenders', function () {
+    return view('tenders');
+})->name('tenders');
+
+Route::get('/highchart', function () {
+    return view('highchart');
+})->name('highchart');
+
+Route::get('/barchart', function () {
+    return view('barchart');
+})->name('barchart');
