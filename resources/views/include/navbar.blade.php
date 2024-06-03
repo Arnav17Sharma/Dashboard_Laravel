@@ -22,8 +22,8 @@
                         <span class="nxl-mtext">Forms</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="reports-sales.html">Form 1</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="reports-leads.html">Form 2</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('form1') }}">Form 1</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('form2') }}">Form 2</a></li>
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">

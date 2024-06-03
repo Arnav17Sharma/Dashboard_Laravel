@@ -433,8 +433,8 @@
                             <input type="text" class="form-control" placeholder="Phone">
                         </div>
                     </div>
-                    <div class="row mb-4">
-                        <input class="col-lg-5 btn btn-primary ms-" type="submit" id="commentSwitch">
+                    <div class="row mt-2 mb-2">
+                        <input class="col-lg-6 row mb-2 ms-auto me-auto btn btn-primary ms-" type="submit" id="commentSwitch">
                     </div>
                 </div>
             </div>

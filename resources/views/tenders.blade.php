@@ -46,38 +46,19 @@
                             <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
                                 <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
                             </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
+                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle" style="top: 76%; right: 10px">
                                 <i class="bi bi-patch-check-fill"></i>
                             </div>
                         </div>
                         <div class="mb-4">
                             <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
+                            <a href="javascript:void(0);" class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
                         </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
+                        
                     </div>
-                    <ul class="list-unstyled mb-4">
+                    <ul class="list-unstyled mb-2">
                         <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
+                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Location</span>
                             <a href="javascript:void(0);" class="float-end">California, USA</a>
                         </li>
                         <li class="hstack justify-content-between mb-4">
@@ -94,8 +75,8 @@
                             <i class="feather-trash-2 me-2"></i>
                             <span>Delete</span>
                         </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
+                        <a href="{{ route('tenderprofile') }}" class="btn btn-primary mt-2 d-inline-block mx-auto">
+                            <i class="feather-user"></i>
                             <span>View Profile</span>
                         </a>
                     </div>
@@ -112,38 +93,19 @@
                             <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
                                 <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
                             </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
+                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle" style="top: 76%; right: 10px">
                                 <i class="bi bi-patch-check-fill"></i>
                             </div>
                         </div>
                         <div class="mb-4">
                             <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
+                            <a href="javascript:void(0);" class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
                         </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
+                        
                     </div>
-                    <ul class="list-unstyled mb-4">
+                    <ul class="list-unstyled mb-2">
                         <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
+                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Location</span>
                             <a href="javascript:void(0);" class="float-end">California, USA</a>
                         </li>
                         <li class="hstack justify-content-between mb-4">
@@ -160,8 +122,8 @@
                             <i class="feather-trash-2 me-2"></i>
                             <span>Delete</span>
                         </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
+                        <a href="{{ route('tenderprofile') }}" class="btn btn-primary mt-2 d-inline-block mx-auto">
+                            <i class="feather-user"></i>
                             <span>View Profile</span>
                         </a>
                     </div>
@@ -178,38 +140,19 @@
                             <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
                                 <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
                             </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
+                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle" style="top: 76%; right: 10px">
                                 <i class="bi bi-patch-check-fill"></i>
                             </div>
                         </div>
                         <div class="mb-4">
                             <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
+                            <a href="javascript:void(0);" class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
                         </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
+                        
                     </div>
-                    <ul class="list-unstyled mb-4">
+                    <ul class="list-unstyled mb-2">
                         <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
+                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Location</span>
                             <a href="javascript:void(0);" class="float-end">California, USA</a>
                         </li>
                         <li class="hstack justify-content-between mb-4">
@@ -226,206 +169,8 @@
                             <i class="feather-trash-2 me-2"></i>
                             <span>Delete</span>
                         </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
-                            <span>View Profile</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--! END: [Profile] !-->
-        <!--! BEGIN: [Profile] !-->
-        <div class="col-xxl-4 col-lg-6">
-            <div class="card stretch stretch-full">
-                <div class="card-body">
-                    <div class="mb-4 text-center">
-                        <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
-                            <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
-                                <i class="bi bi-patch-check-fill"></i>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
-                        </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-unstyled mb-4">
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
-                            <a href="javascript:void(0);" class="float-end">California, USA</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
-                            <a href="javascript:void(0);" class="float-end">+01 (375) 2589 645</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-0">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
-                            <a href="javascript:void(0);" class="float-end">alex.della@outlook.com</a>
-                        </li>
-                    </ul>
-                    <div class="mx-auto d-flex gap-2 text-center pt-4">
-                        <!-- <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
-                            <i class="feather-trash-2 me-2"></i>
-                            <span>Delete</span>
-                        </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
-                            <span>View Profile</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--! END: [Profile] !-->
-        <!--! BEGIN: [Profile] !-->
-        <div class="col-xxl-4 col-lg-6">
-            <div class="card stretch stretch-full">
-                <div class="card-body">
-                    <div class="mb-4 text-center">
-                        <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
-                            <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
-                                <i class="bi bi-patch-check-fill"></i>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
-                        </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-unstyled mb-4">
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
-                            <a href="javascript:void(0);" class="float-end">California, USA</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
-                            <a href="javascript:void(0);" class="float-end">+01 (375) 2589 645</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-0">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
-                            <a href="javascript:void(0);" class="float-end">alex.della@outlook.com</a>
-                        </li>
-                    </ul>
-                    <div class="mx-auto d-flex gap-2 text-center pt-4">
-                        <!-- <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
-                            <i class="feather-trash-2 me-2"></i>
-                            <span>Delete</span>
-                        </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
-                            <span>View Profile</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--! END: [Profile] !-->
-        <!--! BEGIN: [Profile] !-->
-        <div class="col-xxl-4 col-lg-6">
-            <div class="card stretch stretch-full">
-                <div class="card-body">
-                    <div class="mb-4 text-center">
-                        <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
-                            <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
-                                style="top: 76%; right: 10px">
-                                <i class="bi bi-patch-check-fill"></i>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> Alexandra Della</a>
-                            <a href="javascript:void(0);"
-                                class="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
-                        </div>
-                        <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4 pb-2">
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                <p class="fs-12 text-muted mb-0">Followers</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                <p class="fs-12 text-muted mb-0">Following</p>
-                            </div>
-                            <div
-                                class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                <p class="fs-12 text-muted mb-0">Engagement</p>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-unstyled mb-4">
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i
-                                    class="feather-map-pin"></i>Location</span>
-                            <a href="javascript:void(0);" class="float-end">California, USA</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-4">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
-                            <a href="javascript:void(0);" class="float-end">+01 (375) 2589 645</a>
-                        </li>
-                        <li class="hstack justify-content-between mb-0">
-                            <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
-                            <a href="javascript:void(0);" class="float-end">alex.della@outlook.com</a>
-                        </li>
-                    </ul>
-                    <div class="mx-auto d-flex gap-2 text-center pt-4">
-                        <!-- <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
-                            <i class="feather-trash-2 me-2"></i>
-                            <span>Delete</span>
-                        </a> -->
-                        <a href="javascript:void(0);" class="btn btn-primary mt-2 d-inline-block mx-auto">
-                            <i class="feather-user me-2"></i>
+                        <a href="{{ route('tenderprofile') }}" class="btn btn-primary mt-2 d-inline-block mx-auto">
+                            <i class="feather-user"></i>
                             <span>View Profile</span>
                         </a>
                     </div>

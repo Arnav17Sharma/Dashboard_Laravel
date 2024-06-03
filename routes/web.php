@@ -41,3 +41,15 @@ Route::get('/highchart', function () {
 Route::get('/barchart', function () {
     return view('barchart');
 })->name('barchart');
+
+Route::get('/tenderprofile', function () {
+    return view('tenderprofile');
+})->name('tenderprofile');
+
+Route::get('/form1', function () {
+    return view('form1');
+})->name('form1');
+
+Route::get('/form2', function () {
+    return view('form2');
+})->name('form2');
