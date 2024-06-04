@@ -53,3 +53,10 @@ Route::get('/form1', function () {
 Route::get('/form2', function () {
     return view('form2');
 })->name('form2');
+
+
+use App\Http\Controllers\MemberController;
+Route::get('/add_member', [MemberController::class, 'add_member'])->name('add_member');
+Route::post('/add_member', [MemberController::class, 'save_member'])->name('save_member');
+
+Route::get('/view_members', [MemberController::class, 'view_members'])->name('view_members');
