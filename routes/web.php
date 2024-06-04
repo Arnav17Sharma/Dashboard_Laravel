@@ -60,3 +60,8 @@ Route::get('/add_member', [MemberController::class, 'add_member'])->name('add_me
 Route::post('/add_member', [MemberController::class, 'save_member'])->name('save_member');
 
 Route::get('/view_members', [MemberController::class, 'view_members'])->name('view_members');
+Route::post('/view_members', [MemberController::class, 'edit_role_members'])->name('edit_role_members');
+
+
+Route::get('/edit_member/{id}', [MemberController::class, 'edit_member'])->name('edit_member');
+Route::post('/update_member/{id}', [MemberController::class, 'update_member'])->name('update_member');

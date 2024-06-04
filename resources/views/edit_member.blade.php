@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Add Member')
+@section('title', 'Edit Member')
 @section('csslinks')
 <!--! END:  Apps Title-->
 <!--! BEGIN: Favicon-->
@@ -27,11 +27,11 @@
 <div class="page-header">
     <div class="page-header-left d-flex align-items-center">
         <div class="page-header-title">
-            <h5 class="m-b-10">Add Member</h5>
+            <h5 class="m-b-10">Edit Member</h5>
         </div>
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Members</a></li>
-            <li class="breadcrumb-item">Add Member</li>
+            <li class="breadcrumb-item">Edit Member</li>
         </ul>
     </div>
 </div>
@@ -53,24 +53,24 @@
         <div class="col-xxl-7 col-md-6 ms-auto me-auto" data-select2-id="select2-data-6-ktob">
             <div class="card stretch-full" data-select2-id="select2-data-5-p6zd">
                 <div class="card-body" data-select2-id="select2-data-4-c1qo">
-                    <form action="{{ route('add_member') }}" method="POST">
+                    <form action="{{ url('/update_member/'.$member->id) }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="mb-4">
                                 <label class="form-label">Full Name<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="Full Name" name="name">
+                                <input type="text" class="form-control" placeholder="Full Name" name="name" value="{{ $member->name }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-4">
                                 <label class="form-label">Email <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" placeholder="Email" name="email">
+                                <input type="email" class="form-control" placeholder="Email" name="email" value="{{ $member->email }}" readonly>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-4">
                                 <label class="form-label">Phone<span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" placeholder="Phone" name="phone">
+                                <input type="tel" class="form-control" placeholder="Phone" name="phone" value="{{ $member->phone }}">
                             </div>
                         </div>
                         @if($roles)
@@ -79,7 +79,11 @@
                                 <label class="form-label">Role<span class="text-danger">*</span></label>
                                 <select class="form-control select2-hidden-accessible" data-select2-selector="status" tabindex="-1" aria-hidden="true" name="role" style="text-transform: capitalize;">
                                     @foreach($roles as $role)
-                                        <option value="{{ $role->role_id }}">{{ $role->role }}</option>
+                                        <option value="{{ $role->role_id }}"
+                                        @if(old("role", $member->role_id) == $role->role_id)
+                                            selected=""
+                                        @endif
+                                        >{{ $role->role }}</option>
                                     @endforeach
                                     <!-- <option value="1" data-bg="bg-danger" selected="" data-select2-id="select2-data-48-8kfe">Admin</option>
                                     <option value="2" data-bg="bg-warning" data-select2-id="select2-data-174-a4dr">Manager</option>

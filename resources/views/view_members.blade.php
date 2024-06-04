@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Reports')
+@section('title', 'View Members')
 @section('csslinks')
 <!--! END:  Apps Title-->
 <!--! BEGIN: Favicon-->
@@ -26,14 +26,15 @@
 <![endif]-->
 @endsection
 @section('content')
+<form action="{{ route('view_members') }}" method="POST">
 <div class="page-header">
     <div class="page-header-left d-flex align-items-center">
         <div class="page-header-title">
-            <h5 class="m-b-10">Reports</h5>
+            <h5 class="m-b-10">View Members</h5>
         </div>
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item">Reports</li>
+            <li class="breadcrumb-item"><a href="index.html">Members</a></li>
+            <li class="breadcrumb-item">View Members</li>
         </ul>
     </div>
 </div>
@@ -59,67 +60,81 @@
                         <div id="leadList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                             <div class="row dt-row" data-select2-id="select2-data-9-l8c0">
                                 <div class="col-sm-12" data-select2-id="select2-data-6-j9oc">
-                                    <table class="table table-hover dataTable no-footer" id="leadList"
-                                        aria-describedby="leadList_info" data-select2-id="select2-data-leadList">
-                                        <thead>
-                                            <tr>
-                                                <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1"
-                                                    colspan="1" aria-label="Lead: activate to sort column ascending"
-                                                    style="width: 75.325px;">Name</th>
-                                                <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1"
-                                                    colspan="1" aria-label="Email: activate to sort column ascending"
-                                                    style="width: 155.837px;">Email</th>
-                                                <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1"
-                                                    colspan="1" aria-label="Date: activate to sort column ascending"
-                                                    style="width: 118.938px;">Created Date</th>
-                                                <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1"
-                                                    colspan="1" aria-label="Status: activate to sort column ascending"
-                                                    style="width: 114.912px;">Updated Date</th>
-                                                <th class="text-end sorting" tabindex="0" aria-controls="leadList"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Actions: activate to sort column ascending"
-                                                    style="width: 68px;">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody data-select2-id="select2-data-5-71uf">
-                                            @if($members)
+                                        <table class="table table-hover dataTable no-footer" id="leadList"
+                                            aria-describedby="leadList_info" data-select2-id="select2-data-leadList">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Lead: activate to sort column ascending"
+                                                        >Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Email: activate to sort column ascending"
+                                                        >Email</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Phone: activate to sort column ascending"
+                                                        >Phone</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Date: activate to sort column ascending"
+                                                        >Created Date</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Date: activate to sort column ascending"
+                                                        >Updated Date</th>
+                                                    <th class="text-end sorting" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Actions: activate to sort column ascending"
+                                                        >Role</th>
+                                                    <th class="text-end" tabindex="0" aria-controls="leadList"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Actions: activate to sort column ascending"
+                                                        >Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-select2-id="select2-data-5-71uf">
+                                                @if($members)
                                                 @foreach($members as $member)
-                                                    <tr class="single-item odd" data-select2-id="select2-data-4-8ka4">
-                                                        <td>
-                                                            <a href="leads-view.html" class="hstack gap-3">
-                                                                <div class="avatar-image avatar-md bg-primary text-white">
+                                                <tr class="single-item odd" data-select2-id="select2-data-4-8ka4">
+                                                    <td>
+                                                        <a href="#" class="hstack gap-3">
+                                                            <!-- <div class="avatar-image avatar-md bg-primary text-white">
                                                                     E
-                                                                </div>
-                                                                <div>
-                                                                    <span class="text-truncate-1-line">{{ $member->name }}</span>
-                                                                </div>
-                                                            </a>
-                                                        </td>
-                                                        <td><a href="apps-mail.html">{{ $member->email }}</a>
-                                                        </td>
-                                                        <td>{{ $member->created_at }}</td>
-                                                        <td>{{ $member->updated_at }}</td>
-                                                        <td data-select2-id="select2-data-3-8rog">
-                                                            <select class="form-control select2-hidden-accessible"
-                                                                data-select2-selector="status"
-                                                                data-select2-id="select2-data-46-4gfi" tabindex="-1"
-                                                                aria-hidden="true" name="status">
-                                                                <option value="admin" data-bg="bg-danger" selected=""
-                                                                    data-select2-id="select2-data-48-8kfe">Admin</option>
-                                                                <option value="manager" data-bg="bg-warning"
-                                                                    data-select2-id="select2-data-174-a4dr">Manager</option>
-                                                                <option value="member" data-bg="bg-success"
-                                                                    data-select2-id="select2-data-175-qeys">
-                                                                    Member</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
+                                                                </div> -->
+                                                            <div>
+                                                                <span
+                                                                    class="text-truncate-1-line">{{ $member->name }}</span>
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td><a href="#">{{ $member->email }}</a>
+                                                    <td><a href="#">{{ $member->phone }}</a>
+                                                    </td>
+                                                    <td>{{ $member->created_at }}</td>
+                                                    <td>{{ $member->updated_at }}</td>
+                                                    <td>
+                                                    @foreach($roles as $role)
+                                                        @if ($role->role_id == $member->role_id)
+                                                            {{ $role->role }}
+                                                        @endif
+                                                    @endforeach
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ url('/edit_member/'.$member->id) }}" class="btn btn-primary">
+                                                            <i class="feather-edit me-2"></i>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                 @endforeach
-                                            @else
-                                            @endif
-                                            
-                                        </tbody>
-                                    </table>
+                                                @else
+                                                @endif
+
+                                            </tbody>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>

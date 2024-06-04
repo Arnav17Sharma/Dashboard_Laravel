@@ -22,7 +22,7 @@
                         <span class="nxl-mtext">Members</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('add_member') }}">Create Member</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('add_member') }}">Add Member</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Members</a></li>
                     </ul>
                 </li>
