@@ -34,6 +34,31 @@
             <li class="breadcrumb-item">View Gallery</li>
         </ul>
     </div>
+    <div class="page-header-right ms-auto">
+        <div class="page-header-right-items">
+            <!-- <div class="d-flex d-md-none">
+                <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                    <i class="feather-arrow-left me-2"></i>
+                    <span>Back</span>
+                </a>
+            </div> -->
+            <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                <!-- <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
+                    <i class="feather-layers me-2"></i>
+                    <span>Save as Draft</span>
+                </a> -->
+                <a href="{{ route('add_gallery') }}" class="btn btn-primary">
+                    <i class="feather-folder me-2"></i>
+                    <span>Add Gallery</span>
+                </a>
+            </div>
+        </div>
+        <div class="d-md-none d-flex align-items-center">
+            <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                <i class="feather-align-right fs-20"></i>
+            </a>
+        </div>
+    </div>
 </div>
 <div class="main-content">
     @if($errors->any())
@@ -54,7 +79,7 @@
         @foreach($galleries as $gallery)
         <div class="col-xxl-4 col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ asset($gallery->thumbnail); }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ asset($gallery->thumbnail); }}" style="height: 18rem;object-fit: cover;" alt="Card image cap">
                 <div class="card-body text-center ">
                     <h5 class="card-title">{{ $gallery->g_name }}</h5>
                     <p class="card-text">{{ $gallery->created_at }}</p>

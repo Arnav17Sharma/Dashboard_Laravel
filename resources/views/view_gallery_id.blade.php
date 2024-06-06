@@ -27,10 +27,10 @@
 <div class="page-header">
     <div class="page-header-left d-flex align-items-center">
         <div class="page-header-title">
-            <h5 class="m-b-10">{{ $curr_gallery->g_name }}</h5>
+            <h5 class="m-b-10">{{ $curr_gallery->g_name }} ({{ count($all_photos) }} images)</h5>
         </div>
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">View Gallery</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('view_gallery') }}">View Gallery</a></li>
             <li class="breadcrumb-item">{{ $curr_gallery->g_name }} created on {{ $curr_gallery->created_at }}</li>
         </ul>
     </div>
@@ -59,11 +59,11 @@
                             <div class="col-8 step-body mt-2 body current" id="project-create-steps-p-6" role="tabpanel"
                                 aria-labelledby="project-create-steps-h-6" aria-hidden="false" style="left: 0px;">
                                 <div class="">
-                                    <label for="choose-file" class="text-center custom-file-upload"
+                                    <label for="choose-file" class="text-center"
                                         id="choose-file-label">
                                         Add new image</label>
                                     <input style="display:none;" type="number" name="id" value="{{ $id }}">
-                                    <input name="thumbnail" type="file" id="choose-file" style="display: none">
+                                    <input name="images[]" type="file" multiple>
                                 </div>
                             </div>
                             <div class="col-4 mt-auto mb-auto">
@@ -79,13 +79,11 @@
     <div class="row">
         @if($all_photos)
         @foreach($all_photos as $photo)
-        @if($photo->g_id == $id)
         <div class="col-xxl-4 col-lg-4">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{ asset($photo->p_url); }}" alt="Card image cap">
             </div>
         </div>
-        @endif
         @endforeach
         @endif
     </div>

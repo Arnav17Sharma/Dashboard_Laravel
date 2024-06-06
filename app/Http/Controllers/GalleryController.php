@@ -21,7 +21,7 @@ class GalleryController extends Controller
 
     public function view_gallery_id($id)
     {
-        $all_photos = DB::table('gallery_photos_main')->get();
+        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
         $data['curr_gallery'] = $curr_gallery;
         $data['all_photos'] = $all_photos;
@@ -66,16 +66,23 @@ class GalleryController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'thumbnail' => 'required|file|mimes:jpg,png,jpeg,avif,gif,webp',
+            'images.*' => 'required|file|mimes:jpg,png,jpeg,avif,gif,webp',
         ]);
-        $filename = time().'-img.'.$request->file('thumbnail')->getClientOriginalExtension();
-        $request->file('thumbnail')->storeAs('public/uploads/gallery/'.$request->id, $filename);
-        DB::table('gallery_photos_main')->insert([
-            'g_id' => $request->id,
-            'p_url' => 'storage/uploads/gallery/'.$request->id.'/'.$filename,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-        return redirect(route('view_gallery_id_post', $request->id))->with('success', 'Photo added to gallery!');
+        // dd($request->file('images'));
+        $start = 0;
+        foreach($request->file('images') as $file)
+        {
+            $filename = $start.time().'-img.'.$file->getClientOriginalExtension();
+            $file->storeAs('public/uploads/gallery/'.$request->id, $filename);
+            DB::table('gallery_photos_main')->insert([
+                'g_id' => $request->id,
+                'p_url' => 'storage/uploads/gallery/'.$request->id.'/'.$filename,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+            // echo $filename;
+            $start += 1;
+        }
+        return redirect(route('view_gallery_id', $request->id))->with('success', 'Photo added to gallery!');
     }
 }
