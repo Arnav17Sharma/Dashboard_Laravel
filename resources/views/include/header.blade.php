@@ -352,7 +352,7 @@
                 <div class="dropdown nxl-h-item">
                     <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside"
                         class="" aria-expanded="true">
-                        <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar me-0">
+                        <img src="{{ asset('assets/images/avatar/1.png'); }}" alt="user-image" class="img-fluid user-avtar me-0">
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown"
                         data-popper-placement="bottom-end"

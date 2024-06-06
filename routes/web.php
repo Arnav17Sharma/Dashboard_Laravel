@@ -65,3 +65,11 @@ Route::post('/view_members', [MemberController::class, 'edit_role_members'])->na
 
 Route::get('/edit_member/{id}', [MemberController::class, 'edit_member'])->name('edit_member');
 Route::post('/update_member/{id}', [MemberController::class, 'update_member'])->name('update_member');
+
+
+use App\Http\Controllers\GalleryController;
+Route::get('/add_gallery', [GalleryController::class, 'add_gallery'])->name('add_gallery');
+Route::post('/add_gallery', [GalleryController::class, 'add_gallery_post'])->name('add_gallery_post');
+Route::get('/view_gallery', [GalleryController::class, 'view_gallery'])->name('view_gallery');
+Route::get('/view_gallery/{id}', [GalleryController::class, 'view_gallery_id'])->name('view_gallery_id');
+Route::post('/view_gallery/{id}', [GalleryController::class, 'view_gallery_id_post'])->name('view_gallery_id_post');

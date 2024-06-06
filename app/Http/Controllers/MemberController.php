@@ -16,7 +16,7 @@ class MemberController extends Controller
 
     public function view_members()
     {
-        $members = DB::table('members')->get();
+        $members = DB::table('members')->orderBy('created_at', 'DESC')->get();
         $roles = DB::table('role_master')->get();
         $data['roles'] = $roles;
         $data['members'] = $members;
@@ -58,7 +58,7 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|',
-            'phone' => 'required|min:11|numeric',
+            'phone' => 'required|max:10|numeric',
             'role' => 'required|numeric'
         ]);
         DB::table('members')->where('id', $id)
