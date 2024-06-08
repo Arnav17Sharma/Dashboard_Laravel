@@ -11,7 +11,7 @@ class MemberController extends Controller
     {
         $roles = DB::table('role_master')->get();
         $data['roles'] = $roles;
-        return view('add_member', $data);
+        return view('verified_views.add_member', $data);
     }
 
     public function view_members()
@@ -20,7 +20,7 @@ class MemberController extends Controller
         $roles = DB::table('role_master')->get();
         $data['roles'] = $roles;
         $data['members'] = $members;
-        return view('view_members', $data);
+        return view('verified_views.view_members', $data);
     }
 
     public function save_member(Request $request)
@@ -49,7 +49,7 @@ class MemberController extends Controller
         $data['roles'] = $roles;
         $member = DB::table('members')->where('id', $id)->first();
         $data['member'] = $member;
-        return view('edit_member', $data);
+        return view('verified_views.edit_member', $data);
     }
 
     public function update_member(Request $request, $id = null)
@@ -58,7 +58,7 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|',
-            'phone' => 'required|max:10|numeric',
+            'phone' => 'required|numeric',
             'role' => 'required|numeric'
         ]);
         DB::table('members')->where('id', $id)

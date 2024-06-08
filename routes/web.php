@@ -17,59 +17,76 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ADMIN ROUTES STARTS
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/admin/dashboard', function () {
+    return view('verified_views.dashboard');
 })->name('dashboard');
 
-Route::get('/reports', function () {
-    return view('reports');
+Route::get('/admin/reports', function () {
+    return view('verified_views.reports');
 })->name('reports');
 
-Route::get('/calendar', function () {
-    return view('calendar');
+Route::get('/admin/calendar', function () {
+    return view('verified_views.calendar');
 })->name('calendar');
 
-Route::get('/tenders', function () {
-    return view('tenders');
+Route::get('/admin/tenders', function () {
+    return view('verified_views.tenders');
 })->name('tenders');
 
-Route::get('/highchart', function () {
-    return view('highchart');
+Route::get('/admin/highchart', function () {
+    return view('verified_views.highchart');
 })->name('highchart');
 
-Route::get('/barchart', function () {
-    return view('barchart');
+Route::get('/admin/barchart', function () {
+    return view('verified_views.barchart');
 })->name('barchart');
 
-Route::get('/tenderprofile', function () {
-    return view('tenderprofile');
+Route::get('/admin/tenderprofile', function () {
+    return view('verified_views.tenderprofile');
 })->name('tenderprofile');
 
-Route::get('/form1', function () {
-    return view('form1');
+Route::get('/admin/form1', function () {
+    return view('verified_views.form1');
 })->name('form1');
 
-Route::get('/form2', function () {
-    return view('form2');
+Route::get('/admin/form2', function () {
+    return view('verified_views.form2');
 })->name('form2');
 
 
 use App\Http\Controllers\MemberController;
-Route::get('/add_member', [MemberController::class, 'add_member'])->name('add_member');
-Route::post('/add_member', [MemberController::class, 'save_member'])->name('save_member');
+Route::get('/admin/add_member', [MemberController::class, 'add_member'])->name('add_member');
+Route::post('/admin/add_member', [MemberController::class, 'save_member'])->name('save_member');
 
-Route::get('/view_members', [MemberController::class, 'view_members'])->name('view_members');
-Route::post('/view_members', [MemberController::class, 'edit_role_members'])->name('edit_role_members');
+Route::get('/admin/view_members', [MemberController::class, 'view_members'])->name('view_members');
+Route::post('/admin/view_members', [MemberController::class, 'edit_role_members'])->name('edit_role_members');
 
 
-Route::get('/edit_member/{id}', [MemberController::class, 'edit_member'])->name('edit_member');
-Route::post('/update_member/{id}', [MemberController::class, 'update_member'])->name('update_member');
+Route::get('/admin/edit_member/{id}', [MemberController::class, 'edit_member'])->name('edit_member');
+Route::post('/admin/update_member/{id}', [MemberController::class, 'update_member'])->name('update_member');
 
 
 use App\Http\Controllers\GalleryController;
-Route::get('/add_gallery', [GalleryController::class, 'add_gallery'])->name('add_gallery');
-Route::post('/add_gallery', [GalleryController::class, 'add_gallery_post'])->name('add_gallery_post');
-Route::get('/view_gallery', [GalleryController::class, 'view_gallery'])->name('view_gallery');
-Route::get('/view_gallery/{id}', [GalleryController::class, 'view_gallery_id'])->name('view_gallery_id');
-Route::post('/view_gallery/{id}', [GalleryController::class, 'view_gallery_id_post'])->name('view_gallery_id_post');
+Route::get('/admin/add_gallery', [GalleryController::class, 'add_gallery'])->name('add_gallery');
+Route::post('/admin/add_gallery', [GalleryController::class, 'add_gallery_post'])->name('add_gallery_post');
+Route::get('/admin/view_gallery', [GalleryController::class, 'view_gallery'])->name('view_gallery');
+Route::get('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery_id'])->name('view_gallery_id');
+Route::post('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery_id_post'])->name('view_gallery_id_post');
+
+
+// ADMIN ROUTES ENDS
+
+
+
+
+
+// USER ROUTES STARTS
+
+Route::get('/home', function () {
+    return view('user_views.home');
+});
+
+Route::get('/gallery', [GalleryController::class, 'user_view_gallery'])->name('all_gallery');
+Route::get('/gallery/{id}', [GalleryController::class, 'user_view_gallery_id'])->name('user_view_gallery_id');

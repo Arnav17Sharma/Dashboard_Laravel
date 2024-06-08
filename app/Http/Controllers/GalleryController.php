@@ -9,16 +9,23 @@ class GalleryController extends Controller
 {
     public function add_gallery()
     {
-        return view('add_gallery');
+        return view('verified_views.add_gallery');
     }
-
+    
+    
     public function view_gallery()
     {
         $galleries = DB::table('gallery_main')->get();
         $data['galleries'] = $galleries;
-        return view('view_gallery', $data);
+        return view('verified_views.view_gallery', $data);
     }
 
+    public function user_view_gallery()
+    {
+        $galleries = DB::table('gallery_main')->get();
+        $data['galleries'] = $galleries;
+        return view('user_views.all_gallery', $data);
+    }
     public function view_gallery_id($id)
     {
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
@@ -26,7 +33,16 @@ class GalleryController extends Controller
         $data['curr_gallery'] = $curr_gallery;
         $data['all_photos'] = $all_photos;
         $data['id'] = $id;
-        return view('view_gallery_id', $data);
+        return view('verified_views.view_gallery_id', $data);
+    }
+    public function user_view_gallery_id($id)
+    {
+        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
+        $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
+        $data['curr_gallery'] = $curr_gallery;
+        $data['all_photos'] = $all_photos;
+        $data['id'] = $id;
+        return view('user_views.view_gallery_id', $data);
     }
 
     public function add_gallery_post(Request $request)
