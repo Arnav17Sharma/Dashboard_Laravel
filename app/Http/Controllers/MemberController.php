@@ -1,14 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\User;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Session;
 
 class MemberController extends Controller
 {
+    public function dashboard()
+    {
+        if(Auth::user()){
+            return view('verified_views.dashboard');
+        }
+        return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+    }
+
     public function add_member()
     {
         $roles = DB::table('role_master')->get();
@@ -80,15 +89,21 @@ class MemberController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        $user = DB::table('members')->where([
+        $user = User::where([
             'email'=> $request->email,
             'password'=> $request->password,
         ])->first();
         if($user)
         {
-            // Auth::login($user);
+            Auth::login($user); // Uses $user contructed from User Model. 
             return redirect(route('dashboard'))->with('success', 'Logged in successfully!');
         }
         return redirect(route('login'))->with('error', 'Wrong credentials!');
+    }
+
+    function logout() {
+        Session::flush();
+        Auth::logout();
+        return redirect(route('login'));
     }
 }

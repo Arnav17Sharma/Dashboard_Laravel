@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +20,11 @@ Route::get('/', function () {
 });
 
 // ADMIN ROUTES STARTS
-
-Route::get('/admin/dashboard', function () {
-    return view('verified_views.dashboard');
-})->name('dashboard');
+Route::get('/admin/dashboard', [MemberController::class, 'dashboard'])->name('dashboard');
+Route::get('/logout', [MemberController::class, 'logout']) -> name('logout');
+// Route::get('/admin/dashboard', function () {
+//     return view('verified_views.dashboard');
+// })->name('dashboard');
 
 Route::get('/admin/reports', function () {
     return view('verified_views.reports');
@@ -58,7 +61,7 @@ Route::get('/admin/form2', function () {
 
 
 
-use App\Http\Controllers\MemberController;
+
 Route::get('/admin/add_member', [MemberController::class, 'add_member'])->name('add_member');
 Route::post('/admin/add_member', [MemberController::class, 'save_member'])->name('save_member');
 
@@ -70,7 +73,7 @@ Route::get('/admin/edit_member/{id}', [MemberController::class, 'edit_member'])-
 Route::post('/admin/update_member/{id}', [MemberController::class, 'update_member'])->name('update_member');
 
 
-use App\Http\Controllers\GalleryController;
+
 Route::get('/admin/add_gallery', [GalleryController::class, 'add_gallery'])->name('add_gallery');
 Route::post('/admin/add_gallery', [GalleryController::class, 'add_gallery_post'])->name('add_gallery_post');
 Route::get('/admin/view_gallery', [GalleryController::class, 'view_gallery'])->name('view_gallery');
