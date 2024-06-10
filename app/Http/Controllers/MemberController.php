@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\User;
 use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
@@ -70,5 +72,23 @@ class MemberController extends Controller
                                 'updated_at' => date('Y-m-d H:i:s')
                             ]);
         return redirect(route('view_members'))->with('success', 'Member updated!');
+    }
+
+    public function login_post(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $user = DB::table('members')->where([
+            'email'=> $request->email,
+            'password'=> $request->password,
+        ])->first();
+        if($user)
+        {
+            // Auth::login($user);
+            return redirect(route('dashboard'))->with('success', 'Logged in successfully!');
+        }
+        return redirect(route('login'))->with('error', 'Wrong credentials!');
     }
 }

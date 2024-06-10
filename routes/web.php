@@ -56,6 +56,8 @@ Route::get('/admin/form2', function () {
 })->name('form2');
 
 
+
+
 use App\Http\Controllers\MemberController;
 Route::get('/admin/add_member', [MemberController::class, 'add_member'])->name('add_member');
 Route::post('/admin/add_member', [MemberController::class, 'save_member'])->name('save_member');
@@ -86,7 +88,17 @@ Route::post('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery
 
 Route::get('/home', function () {
     return view('user_views.home');
-});
+})->name('home');
 
 Route::get('/gallery', [GalleryController::class, 'user_view_gallery'])->name('all_gallery');
 Route::get('/gallery/{id}', [GalleryController::class, 'user_view_gallery_id'])->name('user_view_gallery_id');
+
+
+
+
+// LOGIN FORM
+Route::get('/login', function () {
+    return view('user_views.login_form');
+})->name('login');
+
+Route::post('/login', [MemberController::class, 'login_post'])->name('login_post');

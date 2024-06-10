@@ -35,6 +35,19 @@
     </div>
 </div>
 <div class="main-content">
+@if($errors->any())
+    <div class="col-12">
+        @foreach($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
+    </div>
+    @endif
+    @if(session()->has('error'))
+    <div class="col-8 alert alert-danger ms-auto me-auto">{{session('error')}}</div>
+    @endif
+    @if(session()->has('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+    @endif
     <div class="row">
         <div class="col-xxl-3 col-lg-3 col-md-6">
             <div class="card stretch stretch-full">

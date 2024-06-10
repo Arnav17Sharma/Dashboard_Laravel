@@ -4,7 +4,7 @@
                 
                 <div class="site-footer__middle">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                        <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                             <div class="footer-widget__column footer-widget__Contact">
                                 <div class="footer-widget__title-box">
                                     <h3 class="footer-widget__title">Contact</h3>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInUp animated" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+                        <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                             <div class="footer-widget__column footer-widget__link">
                                 <div class="footer-widget__title-box">
                                     <h3 class="footer-widget__title">Links</h3>
@@ -51,7 +51,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                        <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                             <div class="footer-widget__column footer-widget__departments">
                                 <div class="footer-widget__title-box">
                                     <h3 class="footer-widget__title">Departments</h3>
@@ -65,61 +65,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                        <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                             <div class="footer-widget__column footer-widget__explore">
                                 <div class="footer-widget__title-box">
                                     <h3 class="footer-widget__title">Explore</h3>
                                 </div>
                                 <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="{{ route('all_gallery') }}">Gallery</a></li>
                                     <li><a href="about.html">Administration</a></li>
                                     <li><a href="about.html">Fire Services</a></li>
                                     <li><a href="tax-return.html">Business &amp; Taxation</a></li>
                                     <li><a href="about.html">Circular’s And Go’s</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp animated" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
-                            <div class="footer-widget__column footer-widget__gallery">
-                                <div class="footer-widget__title-box">
-                                    <h3 class="footer-widget__title">Gallery</h3>
-                                </div>
-                                <ul class="footer-widget__gallery-list list-unstyled clearfix">
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-1.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-1.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-2.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-2.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-3.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-3.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-4.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-4.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-5.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-5.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="assets/images/gallery/footer-widget-gallery-img-6.jpg" alt="">
-                                            <a href="assets/images/gallery/footer-widget-gallery-img-6.jpg" class="img-popup"><span class="fab fa-instagram"></span></a>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>

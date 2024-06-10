@@ -55,7 +55,7 @@
     </div>
 </section>
 
-<section class="department-page">
+<section class="mt-3">
     <div class="container">
         <div class="section-title text-center">
             <div class="section-title__icon">
@@ -66,7 +66,7 @@
         </div>
         <div class="row">
             @foreach($galleries as $gallery)
-            <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated">
                 <div class="department-two__single">
                     <div class="department-two__img-box">
                         <div class="department-two__img" style="width:15rem; height:20rem;">

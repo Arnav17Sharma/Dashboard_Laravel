@@ -40,36 +40,50 @@
 @endsection
 
 @section('content')
-
-
-<section class="mt-5">
+<section class="contact-one">
+    <div class="contact-one__bg" style="background-image: url(user_assets/images/backgrounds/contact-one-bg.png);">
+    </div>
     <div class="container">
-        <div class="section-title text-center">
+        @if($errors->any())
+        <div class="col-12">
+            @foreach($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        </div>
+        @endif
+        @if(session()->has('error'))
+        <div class="col-8 alert alert-danger ms-auto me-auto">{{session('error')}}</div>
+        @endif
+        @if(session()->has('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+        @endif
+        <div class="section-title text-center mt-4">
             <div class="section-title__icon">
                 <span class="fa fa-star"></span>
             </div>
-            <span class="section-title__tagline">Created at {{ $curr_gallery->created_at }}</span>
-            <h2 class="section-title__title">{{ $curr_gallery->g_name }}</h2>
-            <span class="section-title__tagline">{{ count($all_photos) }} images</span>
+            <span class="section-title__tagline">Chhattisgarh Infotech Promotion Society</span>
+            <h2 class="section-title__title">Login
+            </h2>
         </div>
-        <div class="wow fadeInUp animated">
-            <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="footer-widget__column footer-widget__gallery">
-                    <ul class="footer-widget__gallery-list list-unstyled mx-auto justify-content-center">
-                        @foreach($all_photos as $photo)
-                        <li>
-                            <div class="footer-widget__gallery-img" style="width: 20rem;">
-                                <img src="{{ asset($photo->p_url); }}" alt="" style="height: 25rem; object-fit: cover;">
-                                <a href="{{ asset($photo->p_url); }}"
-                                    class="img-popup"></a>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
+        <div class="contact-one__form-box">
+            <form action="{{ route('login_post') }}" method="POST" class="contact-one__form">
+                @csrf
+                <div class="column">
+                    <div class="col-xl-6 mx-auto">
+                        <div class="contact-one__input-box">
+                            <input type="email" placeholder="Email" name="email">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mx-auto">
+                        <div class="contact-one__input-box">
+                            <input type="text" placeholder="Password" name="password">
+                        </div>
+                    </div>
+                    <div class="contact-one__btn-box">
+                        <input type="submit" class="thm-btn contact-one__btn" value="Login">
+                    </div>
+            </form>
         </div>
-    </div>
     </div>
 </section>
 @endsection

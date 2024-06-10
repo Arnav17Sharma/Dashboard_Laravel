@@ -3,7 +3,7 @@
         <div class="main-menu__wrapper">
             <div class="main-menu__wrapper-inner">
                 <div class="main-menu__logo">
-                    <a href="index.html"><img src="user_assets/images/resources/logo-1.png" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="user_assets/images/resources/logo-1.png" alt=""></a>
                 </div>
                 <div class="main-menu__top">
                     <div class="main-menu__top-inner">
@@ -48,7 +48,7 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class=""> <!-- current -->
-                                    <a href="index.html">Home </a>
+                                    <a href="{{ route('home') }}">Home </a>
                                 </li>
                                 <li class=""> <!-- current -->
                                     <a href="{{ route('all_gallery') }}">Gallery</a>
@@ -159,7 +159,7 @@
 
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
+                                <a href="{{ route('login') }}" class="thm-btn main-menu__btn">Login</a>
                             </div>
                         </div>
                     </div>
@@ -420,7 +420,7 @@
 
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
+                                <a href="{{ route('login') }}" class="thm-btn main-menu__btn">Login</a>
                             </div>
                         </div>
                     </div>
