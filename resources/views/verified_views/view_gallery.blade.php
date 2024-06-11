@@ -47,10 +47,19 @@
                     <i class="feather-layers me-2"></i>
                     <span>Save as Draft</span>
                 </a> -->
+                @if(auth()->user()->role_id == 1)
                 <a href="{{ route('add_gallery') }}" class="btn btn-primary">
                     <i class="feather-folder me-2"></i>
                     <span>Add Gallery</span>
                 </a>
+                @endif
+
+                @if(auth()->user()->role_id == 2)
+                <a href="{{ route('add_gallery') }}" class="btn btn-primary">
+                    <i class="feather-folder me-2"></i>
+                    <span>Add Proposal</span>
+                </a>
+                @endif
             </div>
         </div>
         <div class="d-md-none d-flex align-items-center">
@@ -83,7 +92,7 @@
                 <div class="card-body text-center ">
                     <h5 class="card-title">{{ $gallery->g_name }}</h5>
                     <p class="card-text">{{ $gallery->created_at }}</p>
-                    <a href="{{ url('/view_gallery/'.$gallery->g_id) }}" class="btn btn-primary col-6 ms-auto me-auto">View</a>
+                    <a href="{{ url('/admin/view_gallery/'.$gallery->g_id) }}" class="btn btn-primary col-6 ms-auto me-auto">View</a>
                 </div>
             </div>
         </div>

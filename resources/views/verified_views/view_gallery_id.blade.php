@@ -50,10 +50,11 @@
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <div class="row">
+    @if(auth()->user()->role_id == 1)
         <div class="col-xxl-10 col-md-10 ms-auto me-auto" data-select2-id="select2-data-6-ktob">
             <div class="card stretch-full" data-select2-id="select2-data-5-p6zd">
                 <div class="card-body" data-select2-id="select2-data-4-c1qo">
-                    <form action="{{ url('/view_gallery/'.$curr_gallery->g_id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/admin/view_gallery/'.$curr_gallery->g_id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-8 step-body mt-2 body current" id="project-create-steps-p-6" role="tabpanel"
@@ -76,6 +77,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="row">
         @if($all_photos)
         @foreach($all_photos as $photo)

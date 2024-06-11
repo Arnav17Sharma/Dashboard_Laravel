@@ -158,9 +158,16 @@
                                 </div>
 
                             </div>
+                            @if(auth()->user())
+                            <div class="main-menu__btn-box">
+                                <a href="{{ route('dashboard') }}" class="thm-btn main-menu__btn">Dashboard</a>
+                            </div>
+                            @endif
+                            @if(!auth()->user())
                             <div class="main-menu__btn-box">
                                 <a href="{{ route('login') }}" class="thm-btn main-menu__btn">Login</a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

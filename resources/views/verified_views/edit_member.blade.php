@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="mb-4">
                                 <label class="form-label">Full Name<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="Full Name" name="name" value="{{ $member->name }}">
+                                <input type="text" class="form-control" placeholder="Full Name" name="name" value="{{ $member->name }}" readonly>
                             </div>
                         </div>
                         <div class="row">
@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="mb-4">
                                 <label class="form-label">Phone<span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" placeholder="Phone" name="phone" value="{{ $member->phone }}">
+                                <input type="tel" class="form-control" placeholder="Phone" name="phone" value="{{ $member->phone }}" readonly>
                             </div>
                         </div>
                         @if($roles)

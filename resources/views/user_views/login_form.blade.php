@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-xl-6 mx-auto">
                         <div class="contact-one__input-box">
-                            <input type="text" placeholder="Password" name="password">
+                            <input type="text" placeholder="Password" name="password" style="-webkit-text-security: disc;text-security: disc;">
                         </div>
                     </div>
                     <div class="contact-one__btn-box">

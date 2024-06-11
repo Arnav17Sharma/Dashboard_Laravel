@@ -1,20 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Session;
 
 class GalleryController extends Controller
 {
     public function add_gallery()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         return view('verified_views.add_gallery');
+        }
+        return redirect(route('dashboard'));
     }
     
     
     public function view_gallery()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
         $galleries = DB::table('gallery_main')->get();
         $data['galleries'] = $galleries;
         return view('verified_views.view_gallery', $data);
@@ -28,6 +43,10 @@ class GalleryController extends Controller
     }
     public function view_gallery_id($id)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
         $data['curr_gallery'] = $curr_gallery;
@@ -47,6 +66,12 @@ class GalleryController extends Controller
 
     public function add_gallery_post(Request $request)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         $request->validate([
             'thumbnail' => 'required|image',
             'name' => 'required'
@@ -76,10 +101,18 @@ class GalleryController extends Controller
                                 'updated_at' => date('Y-m-d H:i:s')
                             ]);
         return redirect(route('view_gallery'))->with('success', 'Gallery created!');
+                        }
+                        return redirect(route('dashboard'));
     }
 
     public function view_gallery_id_post(Request $request)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         $request->validate([
             'id' => 'required',
             'images.*' => 'required|file|mimes:jpg,png,jpeg,avif,gif,webp',
@@ -100,5 +133,7 @@ class GalleryController extends Controller
             $start += 1;
         }
         return redirect(route('view_gallery_id', $request->id))->with('success', 'Photo added to gallery!');
+    }
+    return redirect(route('dashboard'));
     }
 }

@@ -352,18 +352,25 @@
                 <div class="dropdown nxl-h-item">
                     <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside"
                         class="" aria-expanded="true">
-                        <img src="{{ asset('assets/images/avatar/1.png'); }}" alt="user-image" class="img-fluid user-avtar me-0">
+                        <img src="https://static.vecteezy.com/system/resources/previews/024/293/032/original/illustration-of-user-icon-in-gray-color-vector.jpg" alt="user-image" class="img-fluid user-avtar me-0">
+                        <!-- <div class="img-fluid user-avtar me-0"><i class="bi bi-person-circle"></i></div> -->
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown"
                         data-popper-placement="bottom-end"
                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1024px, 62px);">
                         <div class="dropdown-header">
                             <div class="d-flex align-items-center">
-                                <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar">
+                                <!-- <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar"> -->
                                 <div>
-                                    <h6 class="text-dark mb-0">Alexandra Della <span
-                                            class="badge bg-soft-success text-success ms-1">PRO</span></h6>
-                                    <span class="fs-12 fw-medium text-muted">alex.della@outlook.com</span>
+                                    <h6 class="text-dark mb-0">{{auth()->user()->name}}
+                                        @if(auth()->user()->role_id == 2)
+                                            <span class="badge bg-soft-success text-success ms-1">MEMBER</span>
+                                        @endif
+                                        @if(auth()->user()->role_id == 1)
+                                            <span class="badge bg-soft-danger text-danger ms-1">ADMIN</span>
+                                        @endif
+                                    </h6>
+                                    <span class="fs-12 fw-medium text-muted">{{auth()->user()->email}}</span>
                                 </div>
                             </div>
                         </div>

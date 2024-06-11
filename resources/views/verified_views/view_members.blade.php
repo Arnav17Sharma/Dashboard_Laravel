@@ -88,10 +88,12 @@
                                                         rowspan="1" colspan="1"
                                                         aria-label="Actions: activate to sort column ascending"
                                                         >Role</th>
+                                                        @if(auth()->user()->role_id == 1)
                                                     <th class="text-end" tabindex="0" aria-controls="leadList"
                                                         rowspan="1" colspan="1"
                                                         aria-label="Actions: activate to sort column ascending"
                                                         >Action</th>
+                                                        @endif
                                                 </tr>
                                             </thead>
                                             <tbody data-select2-id="select2-data-5-71uf">
@@ -121,12 +123,14 @@
                                                         @endif
                                                     @endforeach
                                                     </td>
+                                                    @if(auth()->user()->role_id == 1)
                                                     <td>
                                                         <a href="{{ url('/admin/edit_member/'.$member->id) }}" class="btn btn-primary">
                                                             <i class="feather-edit me-2"></i>
                                                             <span>Edit</span>
                                                         </a>
                                                     </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                                 @else

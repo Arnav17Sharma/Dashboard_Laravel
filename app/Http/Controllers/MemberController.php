@@ -13,6 +13,7 @@ class MemberController extends Controller
     public function dashboard()
     {
         if(Auth::user()){
+            // dd(auth()->user()->role_id);
             return view('verified_views.dashboard');
         }
         return redirect(route('login'))->with('error', 'Login required to access dashboard!');
@@ -20,13 +21,25 @@ class MemberController extends Controller
 
     public function add_member()
     {
-        $roles = DB::table('role_master')->get();
-        $data['roles'] = $roles;
-        return view('verified_views.add_member', $data);
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
+            $roles = DB::table('role_master')->get();
+            $data['roles'] = $roles;
+            return view('verified_views.add_member', $data);
+        }
+        return redirect(route('dashboard'));
     }
 
     public function view_members()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
         $members = DB::table('members')->orderBy('created_at', 'DESC')->get();
         $roles = DB::table('role_master')->get();
         $data['roles'] = $roles;
@@ -36,8 +49,15 @@ class MemberController extends Controller
 
     public function save_member(Request $request)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         $request->validate([
             'name' => 'required',
+            'password' => 'required',
             'email' => 'required|email|unique:members',
             'phone' => 'required|min:11|numeric',
             'role' => 'required|numeric'
@@ -45,6 +65,7 @@ class MemberController extends Controller
         DB::table('members')->insert([
             'name' => $request->name,
             'email' => $request->email,
+            'password' => $request->password,
             'phone' => $request->phone,
             'role_id' => $request->role,
             'created_at' => date('Y-m-d H:i:s'),
@@ -52,19 +73,35 @@ class MemberController extends Controller
         ]);
         return redirect(route('view_members'))->with('success', 'Member added!');
     }
+    return redirect(route('dashboard'));
+    }
 
     public function edit_member($id = null)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
         // echo $id;
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         $roles = DB::table('role_master')->get();
         $data['roles'] = $roles;
         $member = DB::table('members')->where('id', $id)->first();
         $data['member'] = $member;
         return view('verified_views.edit_member', $data);
+        }
+        return redirect(route('dashboard'));
     }
 
     public function update_member(Request $request, $id = null)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
         // echo $id;
         $request->validate([
             'name' => 'required',
@@ -81,10 +118,13 @@ class MemberController extends Controller
                                 'updated_at' => date('Y-m-d H:i:s')
                             ]);
         return redirect(route('view_members'))->with('success', 'Member updated!');
+                        }
+                        return redirect(route('dashboard'));
     }
 
     public function login_post(Request $request)
     {
+        
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
@@ -102,6 +142,10 @@ class MemberController extends Controller
     }
 
     function logout() {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
         Session::flush();
         Auth::logout();
         return redirect(route('login'));

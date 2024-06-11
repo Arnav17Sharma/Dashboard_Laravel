@@ -73,6 +73,12 @@
                                 <input type="tel" class="form-control" placeholder="Phone" name="phone">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="mb-4">
+                                <label class="form-label">Password<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="Password" name="password">
+                            </div>
+                        </div>
                         @if($roles)
                         <div class="row" data-select2-id="select2-data-4-at45">
                             <div class="mb-4" data-select2-id="select2-data-3-81zl">
