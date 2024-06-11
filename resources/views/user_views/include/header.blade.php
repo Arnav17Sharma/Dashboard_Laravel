@@ -161,6 +161,10 @@
                             @if(auth()->user())
                             <div class="main-menu__btn-box">
                                 <a href="{{ route('dashboard') }}" class="thm-btn main-menu__btn">Dashboard</a>
+                                <a href="{{ route('logout') }}" class="thm-btn main-menu__btn" style="background-color:#d9534f; width:auto; padding:10px;">
+                                    <i class="feather-log-out"></i>
+                                    <!-- <span>Logout</span> -->
+                                </a>
                             </div>
                             @endif
                             @if(!auth()->user())

@@ -11,7 +11,7 @@
             <ul class="nxl-navbar">
                 <li class="nxl-item">
                     <a href="{{ url('/home') }}" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-airplay"></i></span>
+                        <span class="nxl-micon"><i class="feather-globe"></i></span>
                         <span class="nxl-mtext">Website Home</span>
                     </a>
                     
@@ -23,18 +23,18 @@
                     </a>
                     
                 </li>
+                @if(auth()->user()->role_id == 1)
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-users"></i></span>
                         <span class="nxl-mtext">Members</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        @if(auth()->user()->role_id == 1)
                             <li class="nxl-item"><a class="nxl-link" href="{{ route('add_member') }}">Add Member</a></li>
-                        @endif
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Members</a></li>
                     </ul>
                 </li>
+                @endif
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-folder"></i></span>
@@ -43,8 +43,13 @@
                     <ul class="nxl-submenu">
                         @if(auth()->user()->role_id == 1)
                             <li class="nxl-item"><a class="nxl-link" href="{{ route('add_gallery') }}">Add Gallery</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('view_pending_requests') }}">View Pending Requests</a></li>
+                        @endif
+                        @if(auth()->user()->role_id == 2)
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('add_gallery') }}">Add Request</a></li>
                         @endif
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('view_gallery') }}">View Gallery</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_all_requests_for_member') }}">My Posts</a></li>
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">

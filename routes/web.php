@@ -77,9 +77,14 @@ Route::post('/admin/update_member/{id}', [MemberController::class, 'update_membe
 Route::get('/admin/add_gallery', [GalleryController::class, 'add_gallery'])->name('add_gallery');
 Route::post('/admin/add_gallery', [GalleryController::class, 'add_gallery_post'])->name('add_gallery_post');
 Route::get('/admin/view_gallery', [GalleryController::class, 'view_gallery'])->name('view_gallery');
+Route::get('/admin/view_pending_requests', [GalleryController::class, 'view_pending_requests'])->name('view_pending_requests');
+Route::get('/admin/view_all_requests_for_member', [GalleryController::class, 'view_all_requests_for_member'])->name('view_all_requests_for_member');
 Route::get('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery_id'])->name('view_gallery_id');
+Route::get('/admin/view_pending/{id}', [GalleryController::class, 'view_pending'])->name('view_pending');
 Route::post('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery_id_post'])->name('view_gallery_id_post');
 
+Route::get('/admin/view_pending/accept/{id}', [GalleryController::class, 'accept_gallery'])->name('accept_gallery');
+Route::get('/admin/view_pending/reject/{id}', [GalleryController::class, 'reject_gallery'])->name('reject_gallery');
 
 // ADMIN ROUTES ENDS
 

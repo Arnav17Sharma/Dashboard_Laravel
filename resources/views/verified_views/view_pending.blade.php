@@ -31,7 +31,7 @@
         </div>
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('view_gallery') }}">View Gallery</a></li>
-            <li class="breadcrumb-item">{{ $curr_gallery->g_name }} created on {{ $curr_gallery->created_at }} by <a href="{{ url('/admin/edit_member/'.$author->id) }}">{{ $author->name }}</a></li>
+            <li class="breadcrumb-item">{{ $curr_gallery->g_name }} created on {{ $curr_gallery->created_at }}</li>
         </ul>
     </div>
 </div>
@@ -49,8 +49,37 @@
     @if(session()->has('success'))
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
-    <div class="row">
     @if(auth()->user()->role_id == 1)
+    <div class="row">
+        <div class="col-xxl-10 col-md-10 ms-auto me-auto" data-select2-id="select2-data-6-ktob">
+            <div class="card stretch-full" data-select2-id="select2-data-5-p6zd">
+                <div class="card-body" data-select2-id="select2-data-4-c1qo">
+                    <!-- <form action="{{ url('/admin/view_pending/'.$curr_gallery->g_id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf -->
+                        <div class="row">
+                            <!-- <div class="col-8 step-body mt-2 body current" id="project-create-steps-p-6" role="tabpanel" -->
+                                <!-- aria-labelledby="project-create-steps-h-6" aria-hidden="false" style="left: 0px;"> -->
+                                <!-- <div class=""> -->
+                                    <!-- <label for="choose-file" class="text-center" -->
+                                        <!-- id="choose-file-label"> -->
+                                        <!-- Add new image</label> -->
+                                    <input style="display:none;" type="number" name="id" value="{{ $id }}">
+                                    <!-- <input name="images[]" type="file" multiple> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                            <div class="row">
+                                <a href="{{ url('/admin/view_pending/accept/'.$id) }}" class="col-lg-4 col-sm-4 row ms-auto me-auto btn btn-success" id="commentSwitch">Accept Request</a>
+                                <a href="{{ url('/admin/view_pending/reject/'.$id) }}" class="col-lg-4 col-sm-4 row ms-auto me-auto btn btn-danger" id="commentSwitch">Reject Request</a>
+                            </div>
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @if(auth()->user()->role_id == 2)
+    <div class="row">
         <div class="col-xxl-10 col-md-10 ms-auto me-auto" data-select2-id="select2-data-6-ktob">
             <div class="card stretch-full" data-select2-id="select2-data-5-p6zd">
                 <div class="card-body" data-select2-id="select2-data-4-c1qo">
