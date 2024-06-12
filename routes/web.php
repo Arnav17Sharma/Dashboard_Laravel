@@ -16,7 +16,7 @@ use App\Http\Controllers\GalleryController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user_views.home');
 });
 
 // ADMIN ROUTES STARTS
@@ -62,6 +62,7 @@ Route::get('/admin/form2', function () {
 
 
 
+// Route::get('/admin/add_member', [MemberController::class, 'add_member'])->name('add_member');
 Route::get('/admin/add_member', [MemberController::class, 'add_member'])->name('add_member');
 Route::post('/admin/add_member', [MemberController::class, 'save_member'])->name('save_member');
 

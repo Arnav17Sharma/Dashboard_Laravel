@@ -136,7 +136,7 @@ class MemberController extends Controller
         if($user)
         {
             Auth::login($user); // Uses $user contructed from User Model. 
-            return redirect(route('dashboard'))->with('success', 'Logged in successfully!');
+            return redirect(route('view_gallery'))->with('success', 'Logged in successfully!');
         }
         return redirect(route('login'))->with('error', 'Wrong credentials!');
     }

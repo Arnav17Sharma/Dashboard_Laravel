@@ -267,92 +267,85 @@
                     <a class="nxl-head-link me-3" data-bs-toggle="dropdown" href="#" role="button"
                         data-bs-auto-close="outside">
                         <i class="feather-bell"></i>
-                        <span class="badge bg-danger nxl-h-badge">3</span>
+                        <!-- <span class="badge bg-danger nxl-h-badge">3</span> -->
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-notifications-menu">
                         <div class="d-flex justify-content-between align-items-center notifications-head">
                             <h6 class="fw-bold text-dark mb-0">Notifications</h6>
-                            <a href="javascript:void(0);" class="fs-11 text-success text-end ms-auto"
+                            <!-- <a href="javascript:void(0);" class="fs-11 text-success text-end ms-auto"
                                 data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read">
                                 <i class="feather-check"></i>
                                 <span>Make as Read</span>
-                            </a>
+                            </a> -->
                         </div>
+                        @if(auth()->user()->role_id == 1)
+                        @if($notis)
+                        @foreach($notis as $noti)
                         <div class="notifications-item">
-                            <img src="assets/images/avatar/2.png" alt="" class="rounded me-3 border">
+                            <img src="{{ asset($noti->thumbnail) }}" alt="" class="rounded me-3 border" style="object-fit: cover;">
                             <div class="notifications-desc">
                                 <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
-                                        class="fw-semibold text-dark">Malanie Hanvey</span> We should talk about that at
-                                    lunch!</a>
+                                        class="fw-semibold text-dark">{{ $noti->g_name }}</a>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">2
-                                        minutes ago</div>
+                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">
+                                        created_at {{ $noti->created_at }}</div>
                                     <div class="d-flex align-items-center float-end gap-2">
-                                        <a href="javascript:void(0);"
-                                            class="d-block wd-8 ht-8 rounded-circle bg-gray-300"
-                                            data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read"
-                                            aria-label="Make as Read"></a>
-                                        <a href="javascript:void(0);" class="text-danger" data-bs-toggle="tooltip"
-                                            title="" data-bs-original-title="Remove">
-                                            <i class="feather-x fs-12"></i>
-                                        </a>
                                     </div>
+                                    @if($noti->status == 0)
+                                    <span class="badge bg-soft-warning text-warning">Pending</span>
+                                    @endif
+                                    @if($noti->status == 2)
+                                    <span class="badge bg-soft-danger text-danger">Rejected</span>
+                                    @endif
+                                    <!-- <span class="badge bg-soft-danger text-danger">Completed</span>
+                                    <span class="badge bg-soft-warning text-warning">Completed</span> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-item">
-                            <img src="assets/images/avatar/3.png" alt="" class="rounded me-3 border">
-                            <div class="notifications-desc">
-                                <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
-                                        class="fw-semibold text-dark">Valentine Maton</span> You can download the latest
-                                    invoices now.</a>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">36
-                                        minutes ago</div>
-                                    <div class="d-flex align-items-center float-end gap-2">
-                                        <a href="javascript:void(0);"
-                                            class="d-block wd-8 ht-8 rounded-circle bg-gray-300"
-                                            data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read"
-                                            aria-label="Make as Read"></a>
-                                        <a href="javascript:void(0);" class="text-danger" data-bs-toggle="tooltip"
-                                            title="" data-bs-original-title="Remove">
-                                            <i class="feather-x fs-12"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="notifications-item">
-                            <img src="assets/images/avatar/4.png" alt="" class="rounded me-3 border">
-                            <div class="notifications-desc">
-                                <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
-                                        class="fw-semibold text-dark">Archie Cantones</span> Don't forget to pickup
-                                    Jeremy after school!</a>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">53
-                                        minutes ago</div>
-                                    <div class="d-flex align-items-center float-end gap-2">
-                                        <a href="javascript:void(0);"
-                                            class="d-block wd-8 ht-8 rounded-circle bg-gray-300"
-                                            data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read"
-                                            aria-label="Make as Read"></a>
-                                        <a href="javascript:void(0);" class="text-danger" data-bs-toggle="tooltip"
-                                            title="" data-bs-original-title="Remove">
-                                            <i class="feather-x fs-12"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
                         <div class="text-center notifications-footer">
-                            <a href="javascript:void(0);" class="fs-13 fw-semibold text-dark">Alls Notifications</a>
+                            <a href="{{route('view_pending_requests')}}" class="fs-13 fw-semibold text-dark">Alls Notifications</a>
                         </div>
+                        @endif
+                        @if(auth()->user()->role_id == 2)
+                        @foreach($notis as $noti)
+                        @if($noti->user_id == auth()->user()->id)
+                        <div class="notifications-item">
+                            <img src="{{ asset($noti->thumbnail) }}" alt="" class="rounded me-3 border" style="object-fit: cover;">
+                            <div class="notifications-desc">
+                                <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
+                                        class="fw-semibold text-dark">{{ $noti->g_name }}</a>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">
+                                        created_at {{ $noti->created_at }}</div>
+                                    <div class="d-flex align-items-center float-end gap-2">
+                                    </div>
+                                    @if($noti->status == 0)
+                                    <span class="badge bg-soft-warning text-warning">Pending</span>
+                                    @endif
+                                    @if($noti->status == 2)
+                                    <span class="badge bg-soft-danger text-danger">Rejected</span>
+                                    @endif
+                                    <!-- <span class="badge bg-soft-danger text-danger">Completed</span>
+                                    <span class="badge bg-soft-warning text-warning">Completed</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        @endforeach
+                        <div class="text-center notifications-footer">
+                            <a href="{{route('view_all_requests_for_member')}}" class="fs-13 fw-semibold text-dark">All Posts</a>
+                        </div>
+                        @endif
+                        
                     </div>
                 </div>
                 <div class="dropdown nxl-h-item">
                     <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside"
                         class="" aria-expanded="true">
-                        <img src="https://static.vecteezy.com/system/resources/previews/024/293/032/original/illustration-of-user-icon-in-gray-color-vector.jpg" alt="user-image" class="img-fluid user-avtar me-0">
+                        <img src="https://static.vecteezy.com/system/resources/previews/024/293/032/original/illustration-of-user-icon-in-gray-color-vector.jpg"
+                            alt="user-image" class="img-fluid user-avtar me-0">
                         <!-- <div class="img-fluid user-avtar me-0"><i class="bi bi-person-circle"></i></div> -->
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown"
@@ -364,10 +357,10 @@
                                 <div>
                                     <h6 class="text-dark mb-0">{{auth()->user()->name}}
                                         @if(auth()->user()->role_id == 2)
-                                            <span class="badge bg-soft-success text-success ms-1">MEMBER</span>
+                                        <span class="badge bg-soft-success text-success ms-1">MEMBER</span>
                                         @endif
                                         @if(auth()->user()->role_id == 1)
-                                            <span class="badge bg-soft-danger text-danger ms-1">ADMIN</span>
+                                        <span class="badge bg-soft-danger text-danger ms-1">ADMIN</span>
                                         @endif
                                     </h6>
                                     <span class="fs-12 fw-medium text-muted">{{auth()->user()->email}}</span>

@@ -16,7 +16,20 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
-        return view('verified_views.add_gallery');
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
+        return view('verified_views.add_gallery', $data);
+    }
+
+    public function dashboard()
+    {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
+        return view('verified_views.dashboard', $data);
     }
     
     
@@ -26,6 +39,9 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
+
         $galleries = DB::table('gallery_main')->where('status', 1)->get();
         $data['galleries'] = $galleries;
         return view('verified_views.view_gallery', $data);
@@ -38,10 +54,13 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
-        $galleries = DB::table('gallery_main')->where('status', 0)->get();
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
+        $galleries = DB::table('gallery_main')->where('status', '<>', 1)->get();
         $members = DB::table('members')->get();
         $data['galleries'] = $galleries;
         $data['members'] = $members;
+        // if(Auth::user()->id == 2) {return redirect(route('dashboard')); }
         return view('verified_views.view_pending_requests', $data);
     }
     
@@ -52,6 +71,9 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         $galleries = DB::table('gallery_main')->get();
         $members = DB::table('members')->get();
         $data['galleries'] = $galleries;
@@ -72,10 +94,11 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
         $author = DB::table('members')->where('id', $curr_gallery->user_id)->first();
-
         $data['author'] = $author;
         $data['curr_gallery'] = $curr_gallery;
         $data['all_photos'] = $all_photos;
@@ -89,6 +112,8 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
         $data['curr_gallery'] = $curr_gallery;
@@ -113,7 +138,8 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
-        
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         $request->validate([
             'thumbnail' => 'required|image',
             'name' => 'required'
@@ -172,7 +198,8 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
-        
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         $request->validate([
             'id' => 'required',
             'images.*' => 'required|file|mimes:jpg,png,jpeg,avif,gif,webp',
@@ -217,6 +244,8 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         DB::table('gallery_main')->where('g_id', $id)
                 ->update([
                                     'status' => 1,
@@ -236,6 +265,8 @@ class GalleryController extends Controller
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
+        $notis = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $data['notis'] = $notis;
         DB::table('gallery_main')->where('g_id', $id)
                 ->update([
                                     'status' => 2,

@@ -68,10 +68,10 @@
                                 <label class="form-label">Gallery Thumbnail File<span class="text-danger">*</span></label>
                                 </div>
                                 <div class="mb-4 ms-auto me-auto">
-                                    <label for="choose-file" class="text-center custom-file-upload" id="choose-file-label">
-                                    <img src="assets/images/file-icons/png.png" class="img-fluid wd-30 ht-30" alt="">    
+                                    <label for="choose-file" class="text-center" id="choose-file-label">
+                                    <img src="{{ asset('assets/images/file-icons/png.png'); }}" class="img-fluid wd-30 ht-30" alt="">    
                                     Upload Document </label>
-                                    <input name="thumbnail" type="file" id="choose-file" style="display: none" accept="image/png, image/gif, image/jpeg, image/jpg">
+                                    <input name="thumbnail" type="file" id="choose-file" accept="image/png, image/gif, image/jpeg, image/jpg">
                                 </div>
                             </div>
                         </section>

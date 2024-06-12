@@ -43,7 +43,7 @@
                     <ul class="nxl-submenu">
                         @if(auth()->user()->role_id == 1)
                             <li class="nxl-item"><a class="nxl-link" href="{{ route('add_gallery') }}">Add Gallery</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="{{ route('view_pending_requests') }}">View Pending Requests</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('view_pending_requests') }}">View Requests</a></li>
                         @endif
                         @if(auth()->user()->role_id == 2)
                             <li class="nxl-item"><a class="nxl-link" href="{{ route('add_gallery') }}">Add Request</a></li>
