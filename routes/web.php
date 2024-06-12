@@ -27,31 +27,38 @@ Route::get('/logout', [MemberController::class, 'logout']) -> name('logout');
 // })->name('dashboard');
 
 Route::get('/admin/reports', function () {
-    return view('verified_views.reports');
+    
+    return view('verified_views.reports',);
 })->name('reports');
 
 Route::get('/admin/calendar', function () {
-    return view('verified_views.calendar');
+    
+    return view('verified_views.calendar',);
 })->name('calendar');
 
 Route::get('/admin/tenders', function () {
-    return view('verified_views.tenders');
+    
+    return view('verified_views.tenders',);
 })->name('tenders');
 
 Route::get('/admin/highchart', function () {
-    return view('verified_views.highchart');
+    
+    return view('verified_views.highchart',);
 })->name('highchart');
 
 Route::get('/admin/barchart', function () {
-    return view('verified_views.barchart');
+    
+    return view('verified_views.barchart',);
 })->name('barchart');
 
 Route::get('/admin/tenderprofile', function () {
-    return view('verified_views.tenderprofile');
+    
+    return view('verified_views.tenderprofile',);
 })->name('tenderprofile');
 
 Route::get('/admin/form1', function () {
-    return view('verified_views.form1');
+    
+    return view('verified_views.form1',);
 })->name('form1');
 
 Route::get('/admin/form2', function () {

@@ -278,73 +278,36 @@
                                 <span>Make as Read</span>
                             </a> -->
                         </div>
-                        @if(auth()->user()->role_id == 1)
-                        @if($notis)
-                        @foreach($notis as $noti)
+                        
                         <div class="notifications-item">
-                            <img src="{{ asset($noti->thumbnail) }}" alt="" class="rounded me-3 border" style="object-fit: cover;">
+                            <img src="" alt="" class="rounded me-3 border" style="object-fit: cover;">
                             <div class="notifications-desc">
                                 <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
-                                        class="fw-semibold text-dark">{{ $noti->g_name }}</a>
+                                        class="fw-semibold text-dark">NAME</a>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="notifications-date text-muted border-bottom border-bottom-dashed">
-                                        created_at {{ $noti->created_at }}</div>
+                                        created_at DATE</div>
                                     <div class="d-flex align-items-center float-end gap-2">
                                     </div>
-                                    @if($noti->status == 0)
                                     <span class="badge bg-soft-warning text-warning">Pending</span>
-                                    @endif
-                                    @if($noti->status == 2)
-                                    <span class="badge bg-soft-danger text-danger">Rejected</span>
-                                    @endif
+                                    
                                     <!-- <span class="badge bg-soft-danger text-danger">Completed</span>
                                     <span class="badge bg-soft-warning text-warning">Completed</span> -->
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                        @endif
+                        
                         <div class="text-center notifications-footer">
                             <a href="{{route('view_pending_requests')}}" class="fs-13 fw-semibold text-dark">Alls Notifications</a>
                         </div>
-                        @endif
-                        @if(auth()->user()->role_id == 2)
-                        @foreach($notis as $noti)
-                        @if($noti->user_id == auth()->user()->id)
-                        <div class="notifications-item">
-                            <img src="{{ asset($noti->thumbnail) }}" alt="" class="rounded me-3 border" style="object-fit: cover;">
-                            <div class="notifications-desc">
-                                <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span
-                                        class="fw-semibold text-dark">{{ $noti->g_name }}</a>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="notifications-date text-muted border-bottom border-bottom-dashed">
-                                        created_at {{ $noti->created_at }}</div>
-                                    <div class="d-flex align-items-center float-end gap-2">
-                                    </div>
-                                    @if($noti->status == 0)
-                                    <span class="badge bg-soft-warning text-warning">Pending</span>
-                                    @endif
-                                    @if($noti->status == 2)
-                                    <span class="badge bg-soft-danger text-danger">Rejected</span>
-                                    @endif
-                                    <!-- <span class="badge bg-soft-danger text-danger">Completed</span>
-                                    <span class="badge bg-soft-warning text-warning">Completed</span> -->
-                                </div>
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                        <div class="text-center notifications-footer">
-                            <a href="{{route('view_all_requests_for_member')}}" class="fs-13 fw-semibold text-dark">All Posts</a>
-                        </div>
-                        @endif
+                        
                         
                     </div>
                 </div>
                 <div class="dropdown nxl-h-item">
                     <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside"
                         class="" aria-expanded="true">
-                        <img src="https://static.vecteezy.com/system/resources/previews/024/293/032/original/illustration-of-user-icon-in-gray-color-vector.jpg"
+                        <img src="{{ asset('assets\images\avatar\illustration-of-user-icon-in-gray-color-vector.jpg'); }}"
                             alt="user-image" class="img-fluid user-avtar me-0">
                         <!-- <div class="img-fluid user-avtar me-0"><i class="bi bi-person-circle"></i></div> -->
                     </a>
