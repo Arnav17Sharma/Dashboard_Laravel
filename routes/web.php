@@ -110,19 +110,38 @@ Route::get('/admin/view_board/{id}', [NoticeBoardController::class, 'view_board_
 
 // USER ROUTES STARTS
 
-Route::get('/home', function () {
+Route::get('/user/home', function () {
     return view('user_views.home');
 })->name('home');
 
-Route::get('/gallery', [GalleryController::class, 'user_view_gallery'])->name('all_gallery');
-Route::get('/gallery/{id}', [GalleryController::class, 'user_view_gallery_id'])->name('user_view_gallery_id');
+Route::get('/user/gallery', [GalleryController::class, 'user_view_gallery'])->name('all_gallery');
+Route::get('/user/gallery/{id}', [GalleryController::class, 'user_view_gallery_id'])->name('user_view_gallery_id');
 
 
 
 
 // LOGIN FORM
-Route::get('/login', function () {
+Route::get('/user/login', function () {
     return view('user_views.login_form');
 })->name('login');
 
-Route::post('/login', [MemberController::class, 'login_post'])->name('login_post');
+Route::post('user/login', [MemberController::class, 'login_post'])->name('login_post');
+
+
+
+
+
+
+
+
+
+
+// E & IT
+
+Route::get('/home', function () {
+    return view('e&it_views.home');
+})->name('e&it_views.home');
+
+Route::get('/acts_and_rules', function () {
+    return view('e&it_views.acts_and_rules');
+})->name('e&it_views.acts_and_rules');
