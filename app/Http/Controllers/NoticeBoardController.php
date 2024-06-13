@@ -46,7 +46,7 @@ class NoticeBoardController extends Controller
             if($request->file('files')){
                 foreach($request->file('files') as $file)
                 {
-                    $filename = $start.time().'-pdf.'.$file->getClientOriginalExtension();
+                    $filename = $file->getClientOriginalName().'.'.$file->getClientOriginalExtension();
                     $file->storeAs('public/uploads/notice_board/'.$curr_notice, $filename);
                     $start += 1;
                     DB::table('board_attachments')->insert([
@@ -55,7 +55,30 @@ class NoticeBoardController extends Controller
                     ]);
                 }
             }
-            return redirect(route('add_notice_board'))->with('success', 'Valid!');
         }
+        return redirect(route('add_notice_board'))->with('success', 'Valid!');
+    }
+
+    public function view_notices()
+    {
+        $all_notices = DB::table('notice_board')->where('type', 1)->get();
+        $data['all_notices'] = $all_notices;
+        $all_types = DB::table('notice_type_master')->get();
+        $data['types'] = $all_types;
+        return view('verified_views.view_notices', $data);
+    }
+
+    public function view_tenders()
+    {
+        $all_notices = DB::table('notice_board')->where('type', 2)->get();
+        $data['all_notices'] = $all_notices;
+        $all_types = DB::table('notice_type_master')->get();
+        $data['types'] = $all_types;
+        return view('verified_views.view_tenders', $data);
+    }
+
+    public function view_board_id()
+    {
+        return view('verified_views.view_notice_id');
     }
 }

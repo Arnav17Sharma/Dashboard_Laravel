@@ -100,6 +100,9 @@ Route::get('/admin/view_pending/reject/{id}', [GalleryController::class, 'reject
 // NOTICE BOARD ROUTES STARTS
 Route::get('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice_board'])->name('add_notice_board');
 Route::post('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice_board_post'])->name('add_notice_board_post');
+Route::get('/admin/view_notices', [NoticeBoardController::class, 'view_notices'])->name('view_notices');
+Route::get('/admin/view_tenders', [NoticeBoardController::class, 'view_tenders'])->name('view_tenders');
+Route::get('/admin/view_board/{id}', [NoticeBoardController::class, 'view_board_id'])->name('view_board_id');
 // NOTICE BOARD ROUTES ENDS
 
 

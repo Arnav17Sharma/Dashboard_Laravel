@@ -42,8 +42,8 @@
                     </a>
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('add_notice_board') }}">Add Notice/Tender</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Notices</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Tenders</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_notices') }}">View Notices</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_tenders') }}">View Tenders</a></li>
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
