@@ -37,6 +37,17 @@
                 @endif
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-layers"></i></span>
+                        <span class="nxl-mtext">Notices & Tenders</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('add_notice_board') }}">Add Notice/Tender</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Notices</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_members') }}">View Tenders</a></li>
+                    </ul>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-folder"></i></span>
                         <span class="nxl-mtext">Gallery</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>

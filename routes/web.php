@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NoticeBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,11 +95,15 @@ Route::post('/admin/view_gallery/{id}', [GalleryController::class, 'view_gallery
 Route::get('/admin/view_pending/accept/{id}', [GalleryController::class, 'accept_gallery'])->name('accept_gallery');
 Route::get('/admin/view_pending/reject/{id}', [GalleryController::class, 'reject_gallery'])->name('reject_gallery');
 
+
+
+// NOTICE BOARD ROUTES STARTS
+Route::get('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice_board'])->name('add_notice_board');
+Route::post('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice_board_post'])->name('add_notice_board_post');
+// NOTICE BOARD ROUTES ENDS
+
+
 // ADMIN ROUTES ENDS
-
-
-
-
 
 // USER ROUTES STARTS
 
