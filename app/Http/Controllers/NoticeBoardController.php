@@ -77,8 +77,14 @@ class NoticeBoardController extends Controller
         return view('verified_views.view_tenders', $data);
     }
 
-    public function view_board_id()
+    public function view_board_id($id)
     {
-        return view('verified_views.view_notice_id');
+        $notice_data = DB::table('notice_board')->where('id', $id)->first();
+        $data['notice_data'] = $notice_data;
+        $attachments = DB::table('board_attachments')->where('notice_board_id', $id)->get();
+        $data['attachments'] = $attachments;
+        $all_types = DB::table('notice_type_master')->get();
+        $data['types'] = $all_types;
+        return view('verified_views.view_notice_id', $data);
     }
 }

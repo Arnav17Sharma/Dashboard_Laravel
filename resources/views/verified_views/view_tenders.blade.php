@@ -108,7 +108,7 @@
                                                     
                                                     <td>
                                                         @if (is_null($notice->url))
-                                                            <a href="#" class="btn btn-primary">
+                                                            <a href="{{ url('/admin/view_board/'.$notice->id) }}" class="btn btn-primary">
                                                                 <span>View</span>
                                                             </a>
                                                         @else

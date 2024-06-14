@@ -333,7 +333,7 @@
                         </div>
                         <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
                                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                                class="owl-next"><i class="fa fa-right-arrow"></i></button></div>
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
                 <div class="department-details__left">
                     <div class="department-details__icon-and-title">
                         <div class="department-details__icon">
-                            <span class="icon-suitcase"></span>
+                            <span class=""><i class="fa-solid fa-suitcase"></i></span>
                         </div>
                         <h3 class="department-details__title">About us</h3>
                     </div>
@@ -453,7 +453,7 @@
                             <div class="department-one__content">
                                 <h3 class="department-one__title"><a href="department-details.html">CHiPs</a></h3>
                                 <div class="department-one__icon">
-                                    <span class="icon-parthenon"></span>
+                                    <span class=""><i class="fa-solid fa-arrow-right"></i></span>
                                 </div>
                             </div>
                         </li>
@@ -496,122 +496,6 @@
     </div>
 </section>
 
-<section class="event-three">
-    <div class="container">
-        <div class="row">
-            <!--Event Three Single Start-->
-            <div class="col-xl-4">
-                <div class="services-one__right">
 
-                    <div class="services-one__points-title-box">
-                        <p>Announcements</p>
-                    </div>
-                    <div class="services-one__points-box">
-                        <ul class="services-one__points-list list-unstyled">
-                            <li>
-                                <a href="parking-permission.html">Parking Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="tax-return.html">File a Tax Return<span class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="birth-certificate.html">Order Birth Certificate<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="building-permission.html">Get Building Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="driving-license.html">Apply for Driving License<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="report-polution.html">Report Polution<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="services-one__right">
-
-                    <div class="services-one__points-title-box">
-                        <p>Notifications</p>
-                    </div>
-                    <div class="services-one__points-box">
-                        <ul class="services-one__points-list list-unstyled">
-                            <li>
-                                <a href="parking-permission.html">Parking Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="tax-return.html">File a Tax Return<span class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="birth-certificate.html">Order Birth Certificate<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="building-permission.html">Get Building Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="driving-license.html">Apply for Driving License<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="report-polution.html">Report Polution<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4">
-                <div class="services-one__right">
-
-                    <div class="services-one__points-title-box">
-                        <p>Events</p>
-                    </div>
-                    <div class="services-one__points-box">
-                        <ul class="services-one__points-list list-unstyled">
-                            <li>
-                                <a href="parking-permission.html">Parking Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="tax-return.html">File a Tax Return<span class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="birth-certificate.html">Order Birth Certificate<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="building-permission.html">Get Building Permission<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="driving-license.html">Apply for Driving License<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                            <li>
-                                <a href="report-polution.html">Report Polution<span
-                                        class="fa fa-angle-right"></span></a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 @endsection

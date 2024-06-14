@@ -41,13 +41,24 @@ class GalleryController extends Controller
     }
     
     
+    
+    
+    public function eit_photo_gallery()
+    {
+        $galleries = DB::table('gallery_main')->where('status', 1)->get();
+        $data['galleries'] = $galleries;
+        return view('e&it_views.view_gallery', $data);
+    }
+    
+
+    
     public function view_pending_requests()
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
             return redirect(route('login'))->with('error', 'Login required to access dashboard!');
         }
-        $galleries = DB::table('gallery_main')->where('status', '<>', 1)->get();
+        $galleries = DB::table('gallery_main')->where('status', 0)->get();
         $members = DB::table('members')->get();
         $data['galleries'] = $galleries;
         $data['members'] = $members;
@@ -116,6 +127,16 @@ class GalleryController extends Controller
         $data['all_photos'] = $all_photos;
         $data['id'] = $id;
         return view('user_views.view_gallery_id', $data);
+    }
+    
+    public function eit_photo_gallery_id($id)
+    {
+        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
+        $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
+        $data['curr_gallery'] = $curr_gallery;
+        $data['all_photos'] = $all_photos;
+        $data['id'] = $id;
+        return view('e&it_views.view_gallery_id', $data);
     }
 
     public function add_gallery_post(Request $request)

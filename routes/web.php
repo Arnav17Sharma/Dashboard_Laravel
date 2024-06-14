@@ -145,3 +145,78 @@ Route::get('/home', function () {
 Route::get('/acts_and_rules', function () {
     return view('e&it_views.acts_and_rules');
 })->name('e&it_views.acts_and_rules');
+
+Route::get('/departmental_activities', function () {
+    return view('e&it_views.departmental_activities');
+})->name('e&it_views.departmental_activities');
+
+Route::get('/departmental_structure', function () {
+    return view('e&it_views.departmental_structure');
+})->name('e&it_views.departmental_structure');
+
+Route::get('/services', function () {
+    return view('e&it_views.services');
+})->name('e&it_views.services');
+
+Route::get('/program_and_schemes', function () {
+    return view('e&it_views.program_and_schemes');
+})->name('e&it_views.program_and_schemes');
+
+Route::get('/right_to_information', function () {
+    return view('e&it_views.right_to_information');
+})->name('e&it_views.right_to_information');
+
+Route::get('/subject_matter_art_scheme', function () {
+    return view('e&it_views.subject_matter_art_scheme');
+})->name('e&it_views.subject_matter_art_scheme');
+
+Route::get('/whos_who', function () {
+    return view('e&it_views.whos_who');
+})->name('e&it_views.whos_who');
+
+Route::get('/tenders', function () {
+    return view('e&it_views.tenders');
+})->name('e&it_views.tenders');
+
+Route::get('/notifications', function () {
+    return view('e&it_views.notifications');
+})->name('e&it_views.notifications');
+
+Route::get('/orders', function () {
+    return view('e&it_views.orders');
+})->name('e&it_views.orders');
+
+Route::get('/recruitment', function () {
+    return view('e&it_views.recruitment');
+})->name('e&it_views.recruitment');
+
+Route::get('/news', function () {
+    return view('e&it_views.news');
+})->name('e&it_views.news');
+
+Route::get('/circulars', function () {
+    return view('e&it_views.circulars');
+})->name('e&it_views.circulars');
+
+Route::get('/notice_board', function () {
+    return view('e&it_views.notice_board');
+})->name('e&it_views.notice_board');
+
+Route::get('/contact_us', function () {
+    return view('e&it_views.contact_us');
+})->name('e&it_views.contact_us');
+
+Route::get('/organisation_chart', function () {
+    return view('e&it_views.organisation_chart');
+})->name('e&it_views.organisation_chart');
+
+Route::get('/achievements', function () {
+    return view('e&it_views.achievements');
+})->name('e&it_views.achievements');
+
+Route::get('/achievements', function () {
+    return view('e&it_views.achievements');
+})->name('e&it_views.achievements');
+
+Route::get('/gallery', [GalleryController::class, 'eit_photo_gallery'])->name('eit_photo_gallery');
+Route::get('/gallery/{id}', [GalleryController::class, 'eit_photo_gallery_id'])->name('eit_photo_gallery_id');

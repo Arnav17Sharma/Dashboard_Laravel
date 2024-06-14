@@ -42,7 +42,15 @@
     <link rel="stylesheet" href="{{ asset('eit_assets/vendors/nice-select/nice-select.css'); }}" />
     <link rel="stylesheet" href="{{ asset('eit_assets/css/govity-g.css'); }}" />
     <link rel="stylesheet" href="{{ asset('eit_assets/css/govity-responsive.css'); }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        .offering-one {
+            position: relative;
+            display: block;
+            padding-top: 100px;
+            z-index: 1;
+            padding-bottom: 60px;
+        }
     .search {
         padding: 6px;
         margin-right: -6px;
@@ -80,6 +88,7 @@
     <div class="page-wrapper">
         @include('e&it_views.include.header')
         @yield('content')
+        @include('e&it_views.include.table')
         <section class="brand-one brand-two">
             <div class="container">
                 <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel owl-loaded owl-drag"
@@ -256,6 +265,7 @@
                 <!-- If we need navigation buttons -->
             </div>
         </section>
+        
         @include('e&it_views.include.footer')
     </div><!-- /.page-wrapper -->
 
