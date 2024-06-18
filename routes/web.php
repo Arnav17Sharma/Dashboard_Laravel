@@ -102,6 +102,10 @@ Route::get('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice
 Route::post('/admin/add_notice_board', [NoticeBoardController::class, 'add_notice_board_post'])->name('add_notice_board_post');
 Route::get('/admin/view_notices', [NoticeBoardController::class, 'view_notices'])->name('view_notices');
 Route::get('/admin/view_tenders', [NoticeBoardController::class, 'view_tenders'])->name('view_tenders');
+Route::get('/admin/view_orders', [NoticeBoardController::class, 'view_orders'])->name('view_orders');
+Route::get('/admin/view_circulars', [NoticeBoardController::class, 'view_circulars'])->name('view_circulars');
+Route::get('/admin/view_recruitments', [NoticeBoardController::class, 'view_recruitments'])->name('view_recruitments');
+Route::get('/admin/view_notifications', [NoticeBoardController::class, 'view_notifications'])->name('view_notifications');
 Route::get('/admin/view_board/{id}', [NoticeBoardController::class, 'view_board_id'])->name('view_board_id');
 // NOTICE BOARD ROUTES ENDS
 
@@ -138,85 +142,103 @@ Route::post('user/login', [MemberController::class, 'login_post'])->name('login_
 
 // E & IT
 
-Route::get('/home', function () {
-    return view('e&it_views.home');
-})->name('e&it_views.home');
+// Route::get('/home', function () {
+//     return view('e&it_views.home');
+// })->name('e&it_views.home');
+Route::get('/home', [NoticeBoardController::class, 'view_home'])->name('view_home');
+Route::get('/acts_and_rules', [NoticeBoardController::class, 'view_acts_and_rules'])->name('view_acts_and_rules');
+Route::get('/departmental_activities', [NoticeBoardController::class, 'view_departmental_activities'])->name('view_departmental_activities');
+Route::get('/departmental_structure', [NoticeBoardController::class, 'view_departmental_structure'])->name('view_departmental_structure');
+Route::get('/services', [NoticeBoardController::class, 'view_services'])->name('view_services');
+Route::get('/program_and_schemes', [NoticeBoardController::class, 'view_program_and_schemes'])->name('view_program_and_schemes');
+Route::get('/right_to_information', [NoticeBoardController::class, 'view_right_to_information'])->name('view_right_to_information');
+Route::get('/subject_matter_art_scheme', [NoticeBoardController::class, 'view_subject_matter_art_scheme'])->name('view_subject_matter_art_scheme');
+Route::get('/whos_who', [NoticeBoardController::class, 'view_whos_who'])->name('view_whos_who');
+// Route::get('/contact_us', [NoticeBoardController::class, 'view_contact_us'])->name('view_contact_us');
+Route::get('/organisation_chart', [NoticeBoardController::class, 'view_organisation_chart'])->name('view_organisation_chart');
+Route::get('/achievements', [NoticeBoardController::class, 'view_achievements'])->name('view_achievements');
 
-Route::get('/acts_and_rules', function () {
-    return view('e&it_views.acts_and_rules');
-})->name('e&it_views.acts_and_rules');
+// Route::get('/acts_and_rules', function () {
+//     return view('e&it_views.acts_and_rules');
+// })->name('e&it_views.acts_and_rules');
 
-Route::get('/departmental_activities', function () {
-    return view('e&it_views.departmental_activities');
-})->name('e&it_views.departmental_activities');
+// Route::get('/departmental_activities', function () {
+//     return view('e&it_views.departmental_activities');
+// })->name('e&it_views.departmental_activities');
 
-Route::get('/departmental_structure', function () {
-    return view('e&it_views.departmental_structure');
-})->name('e&it_views.departmental_structure');
+// Route::get('/departmental_structure', function () {
+//     return view('e&it_views.departmental_structure');
+// })->name('e&it_views.departmental_structure');
 
-Route::get('/services', function () {
-    return view('e&it_views.services');
-})->name('e&it_views.services');
+// Route::get('/services', function () {
+//     return view('e&it_views.services');
+// })->name('e&it_views.services');
 
-Route::get('/program_and_schemes', function () {
-    return view('e&it_views.program_and_schemes');
-})->name('e&it_views.program_and_schemes');
+// Route::get('/program_and_schemes', function () {
+//     return view('e&it_views.program_and_schemes');
+// })->name('e&it_views.program_and_schemes');
 
-Route::get('/right_to_information', function () {
-    return view('e&it_views.right_to_information');
-})->name('e&it_views.right_to_information');
+// Route::get('/right_to_information', function () {
+//     return view('e&it_views.right_to_information');
+// })->name('e&it_views.right_to_information');
 
-Route::get('/subject_matter_art_scheme', function () {
-    return view('e&it_views.subject_matter_art_scheme');
-})->name('e&it_views.subject_matter_art_scheme');
+// Route::get('/subject_matter_art_scheme', function () {
+//     return view('e&it_views.subject_matter_art_scheme');
+// })->name('e&it_views.subject_matter_art_scheme');
 
-Route::get('/whos_who', function () {
-    return view('e&it_views.whos_who');
-})->name('e&it_views.whos_who');
+// Route::get('/whos_who', function () {
+//     return view('e&it_views.whos_who');
+// })->name('e&it_views.whos_who');
 
-Route::get('/tenders', function () {
-    return view('e&it_views.tenders');
-})->name('e&it_views.tenders');
+// Route::get('/tenders', function () {
+//     return view('e&it_views.tenders');
+// })->name('e&it_views.tenders');
 
-Route::get('/notifications', function () {
-    return view('e&it_views.notifications');
-})->name('e&it_views.notifications');
+// Route::get('/notifications', function () {
+//     return view('e&it_views.notifications');
+// })->name('e&it_views.notifications');
 
-Route::get('/orders', function () {
-    return view('e&it_views.orders');
-})->name('e&it_views.orders');
+// Route::get('/orders', function () {
+//     return view('e&it_views.orders');
+// })->name('e&it_views.orders');
 
-Route::get('/recruitment', function () {
-    return view('e&it_views.recruitment');
-})->name('e&it_views.recruitment');
+// Route::get('/recruitment', function () {
+//     return view('e&it_views.recruitment');
+// })->name('e&it_views.recruitment');
 
-Route::get('/news', function () {
-    return view('e&it_views.news');
-})->name('e&it_views.news');
+// Route::get('/news', function () {
+//     return view('e&it_views.news');
+// })->name('e&it_views.news');
 
-Route::get('/circulars', function () {
-    return view('e&it_views.circulars');
-})->name('e&it_views.circulars');
+// Route::get('/circulars', function () {
+//     return view('e&it_views.circulars');
+// })->name('e&it_views.circulars');
 
-Route::get('/notice_board', function () {
-    return view('e&it_views.notice_board');
-})->name('e&it_views.notice_board');
+// Route::get('/notice_board', function () {
+//     return view('e&it_views.notice_board');
+// })->name('e&it_views.notice_board');
 
 Route::get('/contact_us', function () {
     return view('e&it_views.contact_us');
 })->name('e&it_views.contact_us');
 
-Route::get('/organisation_chart', function () {
-    return view('e&it_views.organisation_chart');
-})->name('e&it_views.organisation_chart');
+// Route::get('/organisation_chart', function () {
+//     return view('e&it_views.organisation_chart');
+// })->name('e&it_views.organisation_chart');
 
-Route::get('/achievements', function () {
-    return view('e&it_views.achievements');
-})->name('e&it_views.achievements');
+// Route::get('/achievements', function () {
+//     return view('e&it_views.achievements');
+// })->name('e&it_views.achievements');
 
-Route::get('/achievements', function () {
-    return view('e&it_views.achievements');
-})->name('e&it_views.achievements');
 
 Route::get('/gallery', [GalleryController::class, 'eit_photo_gallery'])->name('eit_photo_gallery');
 Route::get('/gallery/{id}', [GalleryController::class, 'eit_photo_gallery_id'])->name('eit_photo_gallery_id');
+
+Route::get('/view_notice/{id}', [NoticeBoardController::class, 'eit_view_notice_id'])->name('eit_view_notice_id');
+Route::get('/notice_board', [NoticeBoardController::class, 'eit_view_notice_board'])->name('eit_view_notice_board');
+Route::get('/news', [NoticeBoardController::class, 'eit_view_news'])->name('eit_view_news');
+Route::get('/tenders', [NoticeBoardController::class, 'eit_view_tenders'])->name('eit_view_tenders');
+Route::get('/orders', [NoticeBoardController::class, 'eit_view_orders'])->name('eit_view_orders');
+Route::get('/circulars', [NoticeBoardController::class, 'eit_view_circulars'])->name('eit_view_circulars');
+Route::get('/recruitments', [NoticeBoardController::class, 'eit_view_recruitments'])->name('eit_view_recruitments');
+Route::get('/notifications', [NoticeBoardController::class, 'eit_view_notifications'])->name('eit_view_notifications');

@@ -41,9 +41,13 @@
                         <span class="nxl-mtext">Notices & Tenders</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('add_notice_board') }}">Add Notice/Tender</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_notices') }}">View Notices</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('add_notice_board') }}">Add to Board</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_notices') }}">View News</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('view_tenders') }}">View Tenders</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_orders') }}">View Orders</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_circulars') }}">View Circulars</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_recruitments') }}">View Recruitments</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('view_notifications') }}">View Notifications</a></li>
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">

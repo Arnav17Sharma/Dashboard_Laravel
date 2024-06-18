@@ -927,8 +927,8 @@
       $(".listing-details__gallery .bxslider").bxSlider({
         nextSelector: ".listing-details__gallery #slider-next",
         prevSelector: ".listing-details__gallery #slider-prev",
-        nextText: '<i class="icon-right-arrow1"></i>',
-        prevText: '<i class="icon-right-arrow1 icon-prev"></i>',
+        nextText: '<i class="fa fa-arrow-right1"></i>',
+        prevText: '<i class="fa fa-arrow-right1 icon-prev"></i>',
         mode: "horizontal",
         auto: "true",
         speed: "1000",

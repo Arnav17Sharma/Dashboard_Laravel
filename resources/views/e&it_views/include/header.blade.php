@@ -42,13 +42,13 @@
         <div class="container">
             <div class="main-header-three__top-inner">
                 <div class="main-header-three__logo">
-                    <a href="index.html">
+                    <a href="">
                         <img src="{{ asset('eit_assets/images/cg-logo.svg'); }}">
                         <h1>Electronics &amp; IT Department</h1>
                         <p>Government of Chhattisgarh</p>
                     </a>
                 </div>
-                <div class="main-header-three__content-box">
+                <!-- <div class="main-header-three__content-box">
                     <div class="main-header-three__search-lan-switcher-btn">
                         <div class="main-header-three__search-box">
                             <a href="#" class="main-header-three__search search-toggler icon-magnifying-glass"></a>
@@ -91,7 +91,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -103,46 +103,46 @@
                         <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                         <ul class="main-menu__list">
                             <li class="">
-                                <a href="{{ route('e&it_views.home') }}">Home </a>
+                                <a href="{{ route('view_home') }}">Home </a>
                             </li>
                             <li class="dropdown">
                                 <a href="#">About Us</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('e&it_views.acts_and_rules') }}">Acts & Rules</a></li>
-                                    <li><a href="{{ route('e&it_views.program_and_schemes') }}">Programmes & Schemes</a></li>
-                                    <li><a href="{{ route('e&it_views.organisation_chart') }}">Organisation Chart</a></li>
-                                    <li class="dropdown"><a href="{{ route('e&it_views.whos_who') }}">Who's who</a>
+                                    <li><a href="{{ route('view_acts_and_rules') }}">Acts & Rules</a></li>
+                                    <li><a href="{{ route('view_program_and_schemes') }}">Programmes & Schemes</a></li>
+                                    <li><a href="{{ route('view_organisation_chart') }}">Organisation Chart</a></li>
+                                    <li class="dropdown"><a href="{{ route('view_whos_who') }}">Who's who</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{ route('e&it_views.achievements') }}">Achievements</a></li>
-                                                <li><a href="{{ route('e&it_views.departmental_activities') }}">Departmental Activities</a></li>
-                                                <li><a href="{{ route('e&it_views.departmental_structure') }}">Departmental Structures</a></li>
-                                                <li><a href="{{ route('e&it_views.subject_matter_art_scheme') }}">Subject Matter of formulated policy</a></li>
+                                                <li><a href="{{ route('view_achievements') }}">Achievements</a></li>
+                                                <li><a href="{{ route('view_departmental_activities') }}">Departmental Activities</a></li>
+                                                <li><a href="{{ route('view_departmental_structure') }}">Departmental Structures</a></li>
+                                                <li><a href="{{ route('view_subject_matter_art_scheme') }}">Subject Matter of formulated policy</a></li>
                                             </ul>
                                         </li>
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="{{ route('e&it_views.services') }}">Services </a>
+                                <a href="{{ route('view_services') }}">Services </a>
                             </li>
                             <li class="">
                                 <a href="{{ route('eit_photo_gallery') }}">Photo Gallery </a>
                             </li>
                             <li class="dropdown">
-                                <a href="{{ route('e&it_views.notice_board') }}">Notice Board</a>
+                                <a href="{{ route('eit_view_notice_board') }}">Notice Board</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('e&it_views.news') }}">News</a></li>
-                                    <li><a href="{{ route('e&it_views.tenders') }}">Tenders</a></li>
-                                    <li><a href="{{ route('e&it_views.orders') }}">Orders</a></li>
-                                    <li><a href="{{ route('e&it_views.circulars') }}">Circulars</a></li>
-                                    <li><a href="{{ route('e&it_views.recruitment') }}">Recruitments</a></li>
-                                    <li><a href="{{ route('e&it_views.notifications') }}">Notifications</a></li>
+                                    <li><a href="{{ route('eit_view_news') }}">News</a></li>
+                                    <li><a href="{{ route('eit_view_tenders') }}">Tenders</a></li>
+                                    <li><a href="{{ route('eit_view_orders') }}">Orders</a></li>
+                                    <li><a href="{{ route('eit_view_circulars') }}">Circulars</a></li>
+                                    <li><a href="{{ route('eit_view_recruitments') }}">Recruitments</a></li>
+                                    <li><a href="{{ route('eit_view_notifications') }}">Notifications</a></li>
                                 </ul>
                             </li>
                             <li class="">
                                 <a href="index.html">Chips Activity </a>
                             </li>
                             <li class="">
-                                <a href="{{ route('e&it_views.right_to_information') }}">Right to Information </a>
+                                <a href="{{ route('view_right_to_information') }}">Right to Information </a>
                             </li>
                             <li class="">
                                 <a href="{{ route('e&it_views.contact_us') }}">Contact Us </a>

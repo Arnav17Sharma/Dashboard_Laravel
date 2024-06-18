@@ -1,18 +1,17 @@
 @extends('e&it_views.layout')
 @section('title', 'Minstry of Electronics & IT | Home')
 @section('content')
-<section class="page-header">
+<section class="page-header" style="height: 40vh;">
     <div class="page-header-bg"
-        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -10rem;">
+        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -15rem;">
     </div>
-    
     <div class="container">
-        <div class="page-header__inner">
-            <h2>Photo Gallery</h2>
+        <div class="page-header__inner" style="padding-top: 50px;">
+            <h2>Recruitments</h2>
             <ul class="thm-breadcrumb list-unstyled">
-                <li><a href="#">Home</a></li>
+                <li><a href="#">Notice Board</a></li>
                 <li><span>/</span></li>
-                <li>Photo Gallery</li>
+                <li>Recruitments</li>
             </ul>
         </div>
     </div>
@@ -44,7 +43,7 @@
                                 &quot;autoplay&quot;: true,
                                 &quot;nav&quot;:false,
                                 &quot;dots&quot;:false,
-                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;],
+                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;],
                                 &quot;responsive&quot;:{
                                     &quot;0&quot;:{
                                         &quot;items&quot;:1
@@ -130,7 +129,7 @@
                         </div>
                         <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
                                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                                class="owl-next"><span class="fa fa-arrow-right"></span></button></div>
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
@@ -146,7 +145,7 @@
             <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp animated">
                 <div class="department-two__single">
                     <div class="department-two__img-box">
-                        <div class="department-two__img" style="width:15rem; height:20rem;">
+                        <div class="department-two__img" style="width:17rem; height:20rem;">
                         <a href="{{ url('/gallery/'.$gallery->g_id) }}"><img style="height:20rem;object-fit:cover;" src="{{($gallery->thumbnail)}}" alt=""></a>
                         </div>
                         <div class="department-two__content">

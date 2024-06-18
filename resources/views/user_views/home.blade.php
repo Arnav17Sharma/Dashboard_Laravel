@@ -57,7 +57,7 @@
 </section> -->
 <section class="main-slider">
     <div class="main-slider__carousel owl-carousel owl-theme thm-owl__carousel owl-loaded owl-drag"
-        data-owl-options="{&quot;loop&quot;: true, &quot;items&quot;: 1, &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;], &quot;margin&quot;: 0, &quot;dots&quot;: true, &quot;nav&quot;: true, &quot;animateOut&quot;: &quot;slideOutDown&quot;, &quot;animateIn&quot;: &quot;fadeIn&quot;, &quot;active&quot;: true, &quot;smartSpeed&quot;: 1000, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000, &quot;autoplayHoverPause&quot;: false}">
+        data-owl-options="{&quot;loop&quot;: true, &quot;items&quot;: 1, &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;], &quot;margin&quot;: 0, &quot;dots&quot;: true, &quot;nav&quot;: true, &quot;animateOut&quot;: &quot;slideOutDown&quot;, &quot;animateIn&quot;: &quot;fadeIn&quot;, &quot;active&quot;: true, &quot;smartSpeed&quot;: 1000, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000, &quot;autoplayHoverPause&quot;: false}">
 
 
 
@@ -401,7 +401,7 @@
         </div>
         <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span
                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                class="owl-next"><span class="fa fa-arrow-right"></span></button></div>
         <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button"
                 class="owl-dot"><span></span></button><button role="button"
                 class="owl-dot active"><span></span></button></div>

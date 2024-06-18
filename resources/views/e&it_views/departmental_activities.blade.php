@@ -43,7 +43,7 @@
                                 &quot;autoplay&quot;: true,
                                 &quot;nav&quot;:false,
                                 &quot;dots&quot;:false,
-                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;],
+                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;],
                                 &quot;responsive&quot;:{
                                     &quot;0&quot;:{
                                         &quot;items&quot;:1
@@ -129,7 +129,7 @@
                         </div>
                         <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
                                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                                class="owl-next"><span class="fa fa-arrow-right"></span></button></div>
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="department-details__left">
                     <div class="department-details__icon-and-title">
                         <div class="department-details__icon">
-                            <span class="icon-suitcase"></span>
+                            <span class="fa fa-suitcase"></span>
                         </div>
                         <h3 class="department-details__title">Departmental Activities</h3>
                     </div>
@@ -165,34 +165,7 @@
             </div>
             <!--Feature Four Single End-->
             <!--Feature Four Single Start-->
-            <div class="col-xl-4 col-lg-5 mt-5">
-                <div class="department-details__right">
-                    <h3 class="department-details__download-title">NOTICE BOARD</h3>
-                    <div class="department-details__services-box">
-                        <ul class="department-details__services-list list-unstyled">
-                            <li>
-                                <a href="#">Your Government<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Jobs & Unemployment<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Business & Industrials<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Roads & Transportation<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Art & Culture<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Policing & Crimes<span class="icon-right-arrow"></span></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
+            @include('e&it_views.include.sidebar_notice_board')
             <!--Feature Four Single End-->
             <!--Feature Four Single Start-->
             <!-- <div class="col-xl-4 col-lg-4">
@@ -246,4 +219,6 @@
         </div>
     </div>
 </section>
+
+@include('e&it_views.include.table')
 @endsection

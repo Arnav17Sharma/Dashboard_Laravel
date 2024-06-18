@@ -42,7 +42,7 @@
                                 &quot;autoplay&quot;: true,
                                 &quot;nav&quot;:false,
                                 &quot;dots&quot;:false,
-                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;],
+                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;],
                                 &quot;responsive&quot;:{
                                     &quot;0&quot;:{
                                         &quot;items&quot;:1
@@ -128,7 +128,7 @@
                         </div>
                         <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
                                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                                class="owl-next"><span class="fa fa-arrow-right"></span></button></div>
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
@@ -231,39 +231,13 @@
     <div class="container">
         <div class="team-one__inner">
             <div class="row">
-
-                <!--Team One Single Start-->
-                <div class="col-xl-4 col-lg-4">
-                    <div class="team-one__single">
-                        <!-- <div class="team-one__shape-4">
-                                    <img src="assets/images/shapes/team-one-shape-4.png" alt="">
-                                </div> -->
-                        <div class="team-one__img-box">
-                            <div class="team-one__img">
-                            <img src="{{ asset('eit_assets/images/people/RiteshKumarAgarwal_IAS.jpg'); }}" style="height:319px;">
-                            </div>
-                        </div>
-                        <div class="team-one__content">
-                            <h3 class="team-one__name"><a href="team-details.html">Mr. Ritesh Kumar Agarwal (IAS)</a>
-                            </h3>
-                            <p class="team-one__sub-title">CEO<br> CHIPS</p>
-                            <!--  <div class="team-one__social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div> -->
-                        </div>
-                    </div>
-                </div>
-                <!--Team One Single End-->
                 <!--Team One Single Start-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="team-one__single">
 
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                            <img src="{{ asset('eit_assets/images/people/cm.jpg'); }}"style="height:319px;">
+                                <img src="{{ asset('eit_assets/images/people/cm.jpg'); }}" style="height:319px;">
                             </div>
                         </div>
                         <div class="team-one__content">
@@ -274,19 +248,49 @@
                     </div>
                 </div>
                 <!--Team One Single End-->
+
+
                 <!--Team One Single Start-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="team-one__single">
 
                         <div class="team-one__img-box">
                             <div class="team-one__img">
-                            <img src="{{ asset('eit_assets/images/people/niharika_barikh.jpg'); }}"style="height:319px;">
+                                <img src="{{ asset('eit_assets/images/people/niharika_barikh.jpg'); }}"
+                                    style="height:319px;">
                             </div>
                         </div>
                         <div class="team-one__content">
                             <h3 class="team-one__name"><a href="team-details.html">Niharika Barik Singh</a></h3>
-                            <p class="team-one__sub-title">Principal Secretary (Department of Electronics & Information Technology)</p>
+                            <p class="team-one__sub-title">Principal Secretary (Department of Electronics & Information
+                                Technology)</p>
 
+                        </div>
+                    </div>
+                </div>
+                <!--Team One Single End-->
+                <!--Team One Single Start-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="team-one__single">
+                        <!-- <div class="team-one__shape-4">
+                                    <img src="assets/images/shapes/team-one-shape-4.png" alt="">
+                                </div> -->
+                        <div class="team-one__img-box">
+                            <div class="team-one__img">
+                                <img src="{{ asset('eit_assets/images/people/RiteshKumarAgarwal_IAS.jpg'); }}"
+                                    style="height:319px;">
+                            </div>
+                        </div>
+                        <div class="team-one__content">
+                            <h3 class="team-one__name"><a href="team-details.html">Mr. Ritesh Kumar Agarwal (IAS)</a>
+                            </h3>
+                            <p class="team-one__sub-title">Joint Secretary (Department of Electronics & Information Technology)</p>
+                            <!--  <div class="team-one__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div> -->
                         </div>
                     </div>
                 </div>

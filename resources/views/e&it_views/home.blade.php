@@ -247,7 +247,7 @@
                                 &quot;autoplay&quot;: true,
                                 &quot;nav&quot;:false,
                                 &quot;dots&quot;:false,
-                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;],
+                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;],
                                 &quot;responsive&quot;:{
                                     &quot;0&quot;:{
                                         &quot;items&quot;:1
@@ -346,7 +346,7 @@
     <div class="container">
         <div class="row">
             <!--Feature Four Single Start-->
-            <div class="col-xl-4 col-lg-4">
+            <div class="col-xl-4 col-lg-4 mt-5">
                 <div class="department-details__left">
                     <div class="department-details__icon-and-title">
                         <div class="department-details__icon">
@@ -354,81 +354,30 @@
                         </div>
                         <h3 class="department-details__title">About us</h3>
                     </div>
-                    <p class="department-details__text-1">Neque porro est qui dolorem ipsum quia quaed inventore
-                        veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis
-                        enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply
-                        dummy text of the printing and typesetting industry.</p>
-                    <p class="department-details__text-2">Biophilia is the idea that humans possess an innate
-                        tendency to seek connections with nature. The term translates</p>
+                    <p class="department-details__text-1">The Electronics & IT Department of Chhattisgarh aims to enhance civil services through technology, foster investment in the IT sector, and develop digital infrastructure. It focuses on GIS, rural internet systems, and promoting research, particularly in using Hindi in IT. The department coordinates IT policy implementation, organizes related events, and ensures comprehensive IT adoption across government departments. It also facilitates collaboration between investors, industries, and financial institutions, while promoting public awareness and human resource development in IT.</p>
+                    <p class="department-details__text-2">The Electronics & IT Department of Chhattisgarh enhances civil services, promotes IT investment, and develops digital infrastructure and public awareness.</p>
                 </div>
             </div>
             <!--Feature Four Single End-->
-            <!--Feature Four Single Start-->
-            <div class="col-xl-4 col-lg-4">
-                <div class="team-one__single">
-                    <div class="team-one__shape-2">
-                        <img src="{{ asset('eit_assets/images/shapes/team-one-shape-2.png'); }}" alt="">
-                    </div>
-                    <div class="team-one__img-box">
-                        <div class="team-one__img">
-                            <img src="{{ asset('eit_assets/images/team/team-1-2.jpg'); }}" alt="">
+            <!--Team One Single Start-->
+            <div class="col-xl-4 col-lg-4 mt-5">
+                    <div class="team-one__single">
+
+                        <div class="team-one__img-box">
+                            <div class="team-one__img">
+                                <img src="{{ asset('eit_assets/images/people/cm.jpg'); }}" style="height:319px;">
+                            </div>
+                        </div>
+                        <div class="team-one__content">
+                            <h3 class="team-one__name"><a href="team-details.html">Shri Vishnu Dev Say</a></h3>
+                            <p class="team-one__sub-title">Honourable Chief Minister<br> Chhattisgarh</p>
+
                         </div>
                     </div>
-                    <div class="team-one__content">
-                        <h3 class="team-one__name"><a href="team-details.html">Some Name</a></h3>
-                        <p class="team-one__sub-title">Position</p>
-                    </div>
                 </div>
-            </div>
-            <!--Feature Four Single End-->
+                <!--Team One Single End-->
             <!--Feature Four Single Start-->
-            <div class="col-xl-4 col-lg-4">
-                <div class="department-details__download">
-                    <h3 class="department-details__download-title">Achievements &amp; Awards</h3>
-                    <ul class="department-details__download-list list-unstyled">
-                        <li>
-                            <div class="department-details__download-content">
-                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
-                                <div class="department-details__download-text">
-                                    <p>Annual Award for excellence</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="department-details__download-content">
-                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
-                                <div class="department-details__download-text">
-                                    <p>Annual Award for excellence</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="department-details__download-content">
-                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
-                                <div class="department-details__download-text">
-                                    <p>Annual Award for excellence</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="department-details__download-content">
-                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
-                                <div class="department-details__download-text">
-                                    <p>Annual Award for excellence</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="department-details__download-content">
-                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
-                                <div class="department-details__download-text">
-                                    <p>Annual Award for excellence</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            @include('e&it_views.include.sidebar_notice_board')
             <!--Feature Four Single End-->
         </div>
     </div>
@@ -451,9 +400,9 @@
                     <ul class="department-one__list list-unstyled">
                         <li class="department-one__single">
                             <div class="department-one__content">
-                                <h3 class="department-one__title"><a href="department-details.html">CHiPs</a></h3>
+                                <h3 class="department-one__title"><a href="department-details.html">CH<i>i</i>PS</a></h3>
                                 <div class="department-one__icon">
-                                    <span class=""><i class="fa-solid fa-arrow-right"></i></span>
+                                    <span class=""><i class="fa fa-building"></i></span>
                                 </div>
                             </div>
                         </li>
@@ -461,7 +410,7 @@
                             <div class="department-one__content">
                                 <h3 class="department-one__title"><a href="department-details.html">SDC</a></h3>
                                 <div class="department-one__icon">
-                                    <span class="icon-suitcase"></span>
+                                    <span class="fa fa-suitcase"></span>
                                 </div>
                             </div>
                         </li>
@@ -469,7 +418,7 @@
                             <div class="department-one__content">
                                 <h3 class="department-one__title"><a href="department-details.html">Bharatnet</a></h3>
                                 <div class="department-one__icon">
-                                    <span class="icon-industry"></span>
+                                    <span class="fa fa-industry"></span>
                                 </div>
                             </div>
                         </li>
@@ -497,5 +446,5 @@
 </section>
 
 
-
+@include('e&it_views.include.table')
 @endsection

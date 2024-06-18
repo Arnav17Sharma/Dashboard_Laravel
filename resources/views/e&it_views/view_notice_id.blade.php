@@ -1,17 +1,18 @@
 @extends('e&it_views.layout')
-@section('title', 'Minstry of Electronics & IT | Services')
+@section('title', 'Minstry of Electronics & IT | Notice')
 @section('content')
+
 <section class="page-header" style="height: 40vh;">
     <div class="page-header-bg"
         style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -15rem;">
     </div>
     <div class="container">
         <div class="page-header__inner" style="padding-top: 50px;">
-            <h2>Services</h2>
+            <h2>Notice</h2>
             <ul class="thm-breadcrumb list-unstyled">
-                <li><a href="#">About Us</a></li>
+                <li><a href="#">Notice Board</a></li>
                 <li><span>/</span></li>
-                <li>Services</li>
+                <li>Notice</li>
             </ul>
         </div>
     </div>
@@ -148,14 +149,42 @@
                         <div class="department-details__icon">
                             <span class="fa fa-suitcase"></span>
                         </div>
-                        <h3 class="department-details__title">Services</h3>
+                        <h3 class="department-details__title">Notice</h3>
                     </div>
                     <div class="faq-one__right mt-3">
-
-                        <p>
-                            No content available.
-                        </p>
-
+                        <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h3>{{ $notice->title }}</h3>
+                                    <hr>
+                                    <h6>Type - 
+                                        @foreach ($types as $type)
+                                            @if ($type->id == $notice->type)
+                                                {{ $type->type }}
+                                            @endif
+                                        @endforeach
+                                    </h6>
+                                    <h6>Date - {{ $notice->created_at }}</h6>
+                                    <h6>Dept. - {{ $notice->department }}</h6>
+                                    <hr>
+                                    <h6>Attachments</h6>
+                                    <p class="mt-3">
+                                    <ul>
+                                        @foreach ($attachments as $attachment)
+                                        <li>
+                                            @php
+                                                $l = explode("/", $attachment->attachment_url);
+                                                $fileName = end($l);
+                                            @endphp
+                                            
+                                            <a href="{{ url($attachment->attachment_url) }}" target="_block">{{$fileName}}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +195,7 @@
             <!--Feature Four Single Start-->
             <!-- <div class="col-xl-4 col-lg-4">
                 <div class="department-details__download">
-                    <h3 class="department-details__download-title">Achievements &amp; Awards</h3>
+                    <h3 class="department-details__download-title">Notice &amp; Awards</h3>
                     <ul class="department-details__download-list list-unstyled">
                         <li>
                             <div class="department-details__download-content">

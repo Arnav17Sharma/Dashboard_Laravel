@@ -255,5 +255,5 @@
         </div>
     </div>
 </section>
-
+@include('e&it_views.include.table')
 @endsection

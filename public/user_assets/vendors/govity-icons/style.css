@@ -67,7 +67,7 @@
 .icon-phone-call:before {
   content: "\e90c";
 }
-.icon-right-arrow:before {
+.fa fa-arrow-right:before {
   content: "\e90d";
 }
 .icon-left-arrow:before {
@@ -145,7 +145,7 @@
 .icon-parthenon:before {
   content: "\e926";
 }
-.icon-suitcase:before {
+.fa fa-suitcase:before {
   content: "\e927";
 }
 .icon-industry:before {

@@ -43,7 +43,7 @@
                                 &quot;autoplay&quot;: true,
                                 &quot;nav&quot;:false,
                                 &quot;dots&quot;:false,
-                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;icon-right-arrow\&quot;></span>&quot;],
+                                &quot;navText&quot;: [&quot;<span class=\&quot;icon-left-arrow\&quot;></span>&quot;,&quot;<span class=\&quot;fa fa-arrow-right\&quot;></span>&quot;],
                                 &quot;responsive&quot;:{
                                     &quot;0&quot;:{
                                         &quot;items&quot;:1
@@ -129,7 +129,7 @@
                         </div>
                         <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
                                     class="icon-left-arrow"></span></button><button type="button" role="presentation"
-                                class="owl-next"><span class="icon-right-arrow"></span></button></div>
+                                class="owl-next"><span class="fa fa-arrow-right"></span></button></div>
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
@@ -230,22 +230,22 @@
                     <div class="department-details__services-box">
                         <ul class="department-details__services-list list-unstyled">
                             <li>
-                                <a href="#">Your Government<span class="icon-right-arrow"></span></a>
+                                <a href="#">Your Government<span class="fa fa-arrow-right"></span></a>
                             </li>
                             <li>
-                                <a href="#">Jobs & Unemployment<span class="icon-right-arrow"></span></a>
+                                <a href="#">Jobs & Unemployment<span class="fa fa-arrow-right"></span></a>
                             </li>
                             <li>
-                                <a href="#">Business & Industrials<span class="icon-right-arrow"></span></a>
+                                <a href="#">Business & Industrials<span class="fa fa-arrow-right"></span></a>
                             </li>
                             <li>
-                                <a href="#">Roads & Transportation<span class="icon-right-arrow"></span></a>
+                                <a href="#">Roads & Transportation<span class="fa fa-arrow-right"></span></a>
                             </li>
                             <li>
-                                <a href="#">Art & Culture<span class="icon-right-arrow"></span></a>
+                                <a href="#">Art & Culture<span class="fa fa-arrow-right"></span></a>
                             </li>
                             <li>
-                                <a href="#">Policing & Crimes<span class="icon-right-arrow"></span></a>
+                                <a href="#">Policing & Crimes<span class="fa fa-arrow-right"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -255,4 +255,5 @@
         </div>
     </div>
 </section>
+@include('e&it_views.include.table')
 @endsection

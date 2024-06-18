@@ -27,8 +27,8 @@
                     <ul class="footer-widget__gallery-list list-unstyled mx-auto justify-content-center">
                         @foreach($all_photos as $photo)
                         <li>
-                            <div class="footer-widget__gallery-img" style="width: 20rem;">
-                                <img src="{{ asset($photo->p_url); }}" alt="" style="height: 25rem; object-fit: cover;">
+                            <div class="footer-widget__gallery-img" style="width: 15rem;">
+                                <img src="{{ asset($photo->p_url); }}" alt="" style="height: 17rem; object-fit: cover;">
                                 <a href="{{ asset($photo->p_url); }}"
                                     class="img-popup"></a>
                             </div>

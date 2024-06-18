@@ -73,6 +73,44 @@
         content: "";
         padding: 0 4px;
     }
+    .marquee {
+    background-color: #ddd;
+    width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    }
+    .marquee span {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    left: 100%;
+    animation: marquee 8s linear infinite;
+    }
+    .marquee:hover span {
+    animation-play-state: paused;
+    }
+
+    .marquee span:nth-child(1) {
+    animation-delay: 0s;
+    }
+    .marquee span:nth-child(2) {
+    animation-delay: 0.8s;
+    }
+    .marquee span:nth-child(3) {
+    animation-delay: 1.6s;
+    }
+    .marquee span:nth-child(4) {
+    animation-delay: 2.4s;
+    }
+    .marquee span:nth-child(5) {
+    animation-delay: 3.2s;
+    }
+
+    @keyframes marquee {
+    0%   { left: 100%; }
+    100% { left: -100%; }
+    }
     </style>
 </head>
 
@@ -88,7 +126,7 @@
     <div class="page-wrapper">
         @include('e&it_views.include.header')
         @yield('content')
-        @include('e&it_views.include.table')
+        
         <section class="brand-one brand-two">
             <div class="container">
                 <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel owl-loaded owl-drag"
@@ -309,7 +347,7 @@
         <!-- /.mobile-nav__content -->
     </div>
     <!-- /.mobile-nav__wrapper -->
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-arrow-right"></i></a>
     <script src="{{ asset('eit_assets/vendors/jquery/jquery-3.6.0.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/bootstrap/js/bootstrap.bundle.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/jarallax/jarallax.min.js'); }}"></script>
