@@ -346,6 +346,7 @@
         </div>
         <!-- /.mobile-nav__content -->
     </div>
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;"><i class="fa fa-arrow-right"></i></a>
     <!-- /.mobile-nav__wrapper -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-arrow-right"></i></a>
     <script src="{{ asset('eit_assets/vendors/jquery/jquery-3.6.0.min.js'); }}"></script>
