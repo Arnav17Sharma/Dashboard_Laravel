@@ -158,6 +158,126 @@ Route::get('/whos_who', [NoticeBoardController::class, 'view_whos_who'])->name('
 Route::get('/organisation_chart', [NoticeBoardController::class, 'view_organisation_chart'])->name('view_organisation_chart');
 Route::get('/achievements', [NoticeBoardController::class, 'view_achievements'])->name('view_achievements');
 
+Route::get('/chips_activity', function () {
+    return view('e&it_views.chips_activity');
+})->name('e&it_views.chips_activity');
+
+Route::get('/statewide-area-network', function () {
+    return view('e&it_views.StateWide');
+})->name('e&it_views.StateWide');
+
+Route::get('/bharatnet', function () {
+    return view('e&it_views.BharatNet');
+})->name('e&it_views.BharatNet');
+
+Route::get('/statewide-area-network-project', function () {
+    return view('e&it_views.StateWide');
+})->name('e&it_views.StateWide');
+
+Route::get('/bastarnet', function () {
+    return view('e&it_views.BastarNet');
+})->name('e&it_views.BastarNet');
+
+Route::get('/wifi-city', function () {
+    return view('e&it_views.Wi-Fi');
+})->name('e&it_views.Wi-Fi');
+
+Route::get('/bastarnet', function () {
+    return view('e&it_views.BastarNet');
+})->name('e&it_views.BastarNet');
+
+Route::get('/software-park', function () {
+    return view('e&it_views.Establishment');
+})->name('e&it_views.Establishment');
+
+Route::get('/state-data-center', function () {
+    return view('e&it_views.State-Data');
+})->name('e&it_views.State-Data');
+
+Route::get('/state-portal', function () {
+    return view('e&it_views.State-Portal');
+})->name('e&it_views.State-Portal');
+
+Route::get('/e-district', function () {
+    return view('e&it_views.E');
+})->name('e&it_views.E');
+
+Route::get('/common-service-center', function () {
+    return view('e&it_views.Common');
+})->name('e&it_views.Common');
+
+Route::get('/aadhar-authentication-system', function () {
+    return view('e&it_views.Aadhar');
+})->name('e&it_views.Aadhar');
+
+Route::get('/integrated-proactive-e-governance-2', function () {
+    return view('e&it_views.Integrated');
+})->name('e&it_views.Integrated');
+
+Route::get('/cg-haat', function () {
+    return view('e&it_views.Chhattisgarh-Haat');
+})->name('e&it_views.Chhattisgarh-Haat');
+
+Route::get('/cg-darpan', function () {
+    return view('e&it_views.Chhattisgarh-Darpan');
+})->name('e&it_views.Chhattisgarh-Darpan');
+
+Route::get('/cg-tika-web-portal', function () {
+    return view('e&it_views.CG');
+})->name('e&it_views.CG');
+
+Route::get('/quantifiable-data-commission', function () {
+    return view('e&it_views.Web');
+})->name('e&it_views.Web');
+
+Route::get('/digital-secretariat', function () {
+    return view('e&it_views.Digital');
+})->name('e&it_views.Digital');
+
+Route::get('/e-procurement', function () {
+    return view('e&it_views.E-Procurement');
+})->name('e&it_views.E-Procurement');
+
+Route::get('/central-project-monitoring-unit', function () {
+    return view('e&it_views.Central');
+})->name('e&it_views.Central');
+
+Route::get('/capacity-development', function () {
+    return view('e&it_views.Capacity');
+})->name('e&it_views.Capacity');
+
+Route::get('/buildnext', function () {
+    return view('e&it_views.BuildNext');
+})->name('e&it_views.BuildNext');
+
+Route::get('/payment-godhan-nyay-yojana', function () {
+    return view('e&it_views.Payment');
+})->name('e&it_views.Payment');
+
+Route::get('/e-samiksha', function () {
+    return view('e&it_views.e-Samiksha');
+})->name('e&it_views.e-Samiksha');
+
+Route::get('/cg-camp-portal', function () {
+    return view('e&it_views.CG-Camp');
+})->name('e&it_views.CG-Camp');
+
+Route::get('/e-punchboard', function () {
+    return view('e&it_views.e-Punchboard');
+})->name('e&it_views.e-Punchboard');
+
+Route::get('/it_enabled-services', function () {
+    return view('e&it_views.Information');
+})->name('e&it_views.Information');
+
+Route::get('/geographic-info-system-div', function () {
+    return view('e&it_views.Geographic');
+})->name('e&it_views.Geographic');
+
+Route::get('/incubator-cum-accelerator-institute', function () {
+    return view('e&it_views.Incubator');
+})->name('e&it_views.Incubator');
+
 // Route::get('/acts_and_rules', function () {
 //     return view('e&it_views.acts_and_rules');
 // })->name('e&it_views.acts_and_rules');

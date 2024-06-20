@@ -1,9 +1,9 @@
 @extends('e&it_views.layout')
 @section('title', 'Minstry of Electronics & IT | Right to Information')
 @section('content')
-<section class="page-header" style="height: 40vh;">
+<section class="page-header" style="height: 30vh;">
     <div class="page-header-bg"
-        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -15rem;">
+        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -17rem;">
     </div>
     <div class="container">
         <div class="page-header__inner" style="padding-top: 50px;">
@@ -138,52 +138,98 @@
     </div>
 </section>
 
-<div class="news-sidebar">
+<section class="feature-four">
     <div class="container">
         <div class="row">
-            <div class="col-xl-8 col-lg-7">
-                <div class="news-sidebar__left">
-                    <div class="news-sidebar__content">
-                        <!--News Sidebar Single Start-->
-                        <div class="news-sidebar__single">
-
-                            <div class="news-sidebar__content-box">
-
-                                <h3 class="news-sidebar__title">
-                                    Right To Information
-                                </h3>
-                                <p class="news-sidebar__text">There are many variations of passages of Lorem
-                                    Ipsum
-                                    available, but majority have suffered alteration in some form, by injected
-                                    humour, or randomised words which don't look even slightly believable. If
-                                    you
-                                    are going to use a passage of Lorem Ipsum.</p><br>
-                                <p class="news-sidebar__text">There are many variations of passages of Lorem
-                                    Ipsum
-                                    available, but majority have suffered alteration in some form, by injected
-                                    humour, or randomised words which don't look even slightly believable. If
-                                    you
-                                    are going to use a passage of Lorem Ipsum.</p><br>
-                                <p class="news-sidebar__text">There are many variations of passages of Lorem
-                                    Ipsum
-                                    available, but majority have suffered alteration in some form, by injected
-                                    humour, or randomised words which don't look even slightly believable. If
-                                    you
-                                    are going to use a passage of Lorem Ipsum.</p>
-                                <a href="news-details.html" class="news-sidebar__read-more">Read More<span
-                                        class="fa fa-arrow-right"></span></a>
-                            </div>
+            <!--Feature Four Single Start-->
+            <div class="col-xl-8 col-lg-8">
+                <div class="department-details__left">
+                    <div class="department-details__icon-and-title">
+                        <div class="department-details__icon">
+                            <span class="fa fa-suitcase"></span>
                         </div>
-                        <!--News Sidebar Single End-->
-
+                        <h3 class="department-details__title">Right to Information</h3>
                     </div>
-
+                    <div class="faq-one__right mt-3">
+                        <ul>
+                            <li class="news-sidebar__text">There are many variations of passages of Lorem
+                                Ipsum
+                                available, but majority have suffered alteration in some form, by injected
+                                humour, or randomised words which don't look even slightly believable. If
+                                you
+                                are going to use a passage of Lorem Ipsum.</li>
+                            <li class="news-sidebar__text">There are many variations of passages of Lorem
+                                Ipsum
+                                available, but majority have suffered alteration in some form, by injected
+                                humour, or randomised words which don't look even slightly believable. If
+                                you
+                                are going to use a passage of Lorem Ipsum.</li>
+                            <li class="news-sidebar__text">There are many variations of passages of Lorem
+                                Ipsum
+                                available, but majority have suffered alteration in some form, by injected
+                                humour, or randomised words which don't look even slightly believable. If
+                                you
+                                are going to use a passage of Lorem Ipsum.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <!--Feature Four Single End-->
+            <!--Feature Four Single Start-->
             @include('e&it_views.include.sidebar_notice_board')
+            <!--Feature Four Single End-->
+            <!--Feature Four Single Start-->
+            <!-- <div class="col-xl-4 col-lg-4">
+                <div class="department-details__download">
+                    <h3 class="department-details__download-title">Achievements &amp; Awards</h3>
+                    <ul class="department-details__download-list list-unstyled">
+                        <li>
+                            <div class="department-details__download-content">
+                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
+                                <div class="department-details__download-text">
+                                    <p>Annual Award for excellence</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="department-details__download-content">
+                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
+                                <div class="department-details__download-text">
+                                    <p>Annual Award for excellence</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="department-details__download-content">
+                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
+                                <div class="department-details__download-text">
+                                    <p>Annual Award for excellence</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="department-details__download-content">
+                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
+                                <div class="department-details__download-text">
+                                    <p>Annual Award for excellence</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="department-details__download-content">
+                                <div class="department-details__download-icon"><span class="fa fa-trophy"></span></div>
+                                <div class="department-details__download-text">
+                                    <p>Annual Award for excellence</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <!--Feature Four Single End-->
         </div>
     </div>
-</div>
+</section>
 
 @include('e&it_views.include.table')
 @endsection

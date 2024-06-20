@@ -1,7 +1,8 @@
 @extends('e&it_views.layout')
 @section('title', 'Minstry of Electronics & IT | Home')
 @section('content')
-<section class="page-header">
+    <section class="page-header" style="height: 30vh;">
+
     <div class="page-header-bg"
         style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -10rem;">
     </div>

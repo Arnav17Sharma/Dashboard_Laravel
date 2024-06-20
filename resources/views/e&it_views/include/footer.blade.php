@@ -18,10 +18,10 @@
                         <ul class="footer-widget__Contact-list list-unstyled">
                             <li>
                                 <div class="icon">
-                                    <span class="icon-email"></span>
+                                    <span class="fa fa-envelope"></span>
                                 </div>
                                 <div class="text">
-                                    <p><a href="mailto:ceochips[at]nic[dot]in"> ceochips[at]nic[dot]in</a></p>
+                                    <p><a href="mailto:ceochips@nic.in"> ceochips[at]nic[dot]in</a></p>
                                 </div>
                             </li>
                             <li>

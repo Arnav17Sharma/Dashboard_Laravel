@@ -139,7 +139,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="index.html">Chips Activity </a>
+                                <a href="{{ url('/chips_activity') }}">Chips Activity </a>
                             </li>
                             <li class="">
                                 <a href="{{ route('view_right_to_information') }}">Right to Information </a>

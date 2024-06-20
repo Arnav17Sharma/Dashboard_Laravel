@@ -40,7 +40,8 @@
 @endsection
 
 @section('content')
-<section class="page-header">
+    <section class="page-header" style="height: 30vh;">
+
     <div class="page-header-bg" style="background-image: url(user_assets/images/backgrounds/page-header-bg.jpg)">
     </div>
     <div class="container">

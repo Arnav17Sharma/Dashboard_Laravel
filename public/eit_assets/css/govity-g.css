@@ -10187,7 +10187,7 @@ ul {
 .news-sidebar {
   position: relative;
   display: block;
-  padding: 120px 0 120px;
+  padding: 30px 0 30px;
 }
 
 .news-sidebar__left {
@@ -10390,7 +10390,7 @@ ul {
 .contact-page {
   position: relative;
   display: block;
-  padding: 120px 0 34px;
+  padding: 35px 0 34px;
   z-index: 1;
 }
 
@@ -11091,7 +11091,7 @@ ul {
 .department-details {
   position: relative;
   display: block;
-  padding: 120px 0 120px;
+  padding: 30px 0 30px;
   z-index: 1;
 }
 
@@ -11997,6 +11997,7 @@ ul {
 .faq-one-accrodion .accrodion-content p {
   margin: 0;
   letter-spacing: var(--govity-letter-spacing-two);
+  text-align: justify;
 }
 
 .faq-one-accrodion .accrodion.last-chiled .accrodion-title {
@@ -12009,6 +12010,10 @@ ul {
 
 .faq-one-accrodion .accrodion.last-chiled .accrodion-content {
   border-bottom: 1px solid transparent;
+}
+
+.inner {
+  text-align: justify;
 }
 
 /*--------------------------------------------------------------

@@ -1,17 +1,17 @@
 @extends('e&it_views.layout')
-@section('title', 'Minstry of Electronics & IT | Home')
+@section('title', 'Minstry of Electronics & IT | Photo Gallery')
 @section('content')
-<section class="page-header" style="height: 40vh;">
+<section class="page-header" style="height: 30vh;">
     <div class="page-header-bg"
-        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -15rem;">
+        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -17rem;">
     </div>
     <div class="container">
         <div class="page-header__inner" style="padding-top: 50px;">
-            <h2>Recruitments</h2>
+            <h2>Photo Gallery</h2>
             <ul class="thm-breadcrumb list-unstyled">
-                <li><a href="#">Notice Board</a></li>
+                <li><a href="#">Home</a></li>
                 <li><span>/</span></li>
-                <li>Recruitments</li>
+                <li>Photo Gallery</li>
             </ul>
         </div>
     </div>
