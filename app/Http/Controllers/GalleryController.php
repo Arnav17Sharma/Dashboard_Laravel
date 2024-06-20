@@ -45,6 +45,8 @@ class GalleryController extends Controller
     
     public function eit_photo_gallery()
     {
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $data['notifications'] = $notifications;
         $galleries = DB::table('gallery_main')->where('status', 1)->get();
         $data['galleries'] = $galleries;
         return view('e&it_views.view_gallery', $data);
@@ -131,6 +133,8 @@ class GalleryController extends Controller
     
     public function eit_photo_gallery_id($id)
     {
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $data['notifications'] = $notifications;
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
         $data['curr_gallery'] = $curr_gallery;

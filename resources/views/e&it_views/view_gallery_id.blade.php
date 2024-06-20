@@ -4,11 +4,11 @@
     <section class="page-header" style="height: 30vh;">
 
     <div class="page-header-bg"
-        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -10rem;">
+        style="background-image: url({{ asset('eit_assets/images/backgrounds/slider-3-1.jpg'); }});background-position: 0px -17rem;">
     </div>
     
-    <div class="container">
-        <div class="page-header__inner">
+    <div class="container mb-10">
+        <div class="page-header__inner" style="padding:60px 0 30px;">
             <h2>{{ $curr_gallery->g_name }}</h2>
             <ul class="thm-breadcrumb list-unstyled">
                 <li><a href="#">Created at {{ $curr_gallery->created_at }}</a></li>
@@ -19,9 +19,10 @@
     </div>
 </section>
 
+@include('e&it_views.include.updates')
+
 <section class="mt-5">
     <div class="container">
-        
         <div class="wow fadeInUp animated">
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="footer-widget__column footer-widget__gallery">

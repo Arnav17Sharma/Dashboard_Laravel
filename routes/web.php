@@ -162,6 +162,10 @@ Route::get('/chips_activity', function () {
     return view('e&it_views.chips_activity');
 })->name('e&it_views.chips_activity');
 
+Route::get('/about_chips', function () {
+    return view('e&it_views.about_chips');
+})->name('e&it_views.about_chips');
+
 Route::get('/statewide-area-network', function () {
     return view('e&it_views.StateWide');
 })->name('e&it_views.StateWide');

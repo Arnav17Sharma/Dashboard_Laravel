@@ -10,6 +10,13 @@
             <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion">
                 <div class="accrodion">
                     <div class="accrodion-title" style="padding: 20px 0px 20px">
+                        <a href="{{ route('e&it_views.about_chips') }}">
+                            <h4>About CH<i>i</i>PS</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="accrodion">
+                    <div class="accrodion-title" style="padding: 20px 0px 20px">
                         <h4>Strategic Group</h4>
                     </div>
                     <div class="accrodion-content" style="display: none;text-align: justify;text-justify: inter-word;">
@@ -123,11 +130,6 @@
                         <a href="{{ route('e&it_views.Geographic') }}">
                             <h4>Geographic Information Systems Division</h4>
                         </a>
-                    </div>
-                    <div class="accrodion-content" style="">
-                        <div class="inner">
-                            <a href="{{ route('e&it_views.Geographic') }}"> Read More...</a>
-                        </div><!-- /.inner -->
                     </div>
                 </div>
 
