@@ -19,20 +19,17 @@
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
                 <ul class="list-unstyled main-menu__top-menu">
-                    <li><a href="#"><i class="fa fa-arrow-down"></i> Skip to Main Content</a></li>
+                    <li><a href="#aboutus"><i class="fa fa-arrow-down"></i> Skip to Main Content</a></li>
                     <li><a href="#"><i class="fa fa-eye-slash"></i> Screen Reader Access</a></li>
-                    <li><a href="#"> Text Size
-                            <span class="bg-c">A-</span>
-                            <span class="bg-c">A</span>
-                            <span class="bg-c">A+</span>
-                        </a></li>
                     <li><a href="#"><i class="fa fa-language"></i> English/हिन्दी</a></li>
                     <li>
-                        <a href="#">
-                            <span class="bg-c bg-c1">A</span>
-                            <span class="bg-c bg-c2">A</span>
-                            <span class="bg-c bg-c3">A</span>
-                        </a>
+                        <a href="#">A-</a>
+                    </li>
+                    <li>
+                        <a href="#">A</a>
+                    </li>
+                    <li>
+                        <a href="#">A+</a>
                     </li>
                 </ul>
             </div>
@@ -112,13 +109,16 @@
                                     <li><a href="{{ route('view_program_and_schemes') }}">Programmes & Schemes</a></li>
                                     <li><a href="{{ route('view_organisation_chart') }}">Organisation Chart</a></li>
                                     <li class="dropdown"><a href="{{ route('view_whos_who') }}">Who's who</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('view_achievements') }}">Achievements</a></li>
-                                                <li><a href="{{ route('view_departmental_activities') }}">Departmental Activities</a></li>
-                                                <li><a href="{{ route('view_departmental_structure') }}">Departmental Structures</a></li>
-                                                <li><a href="{{ route('view_subject_matter_art_scheme') }}">Subject Matter of formulated policy</a></li>
-                                            </ul>
-                                        </li>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('view_achievements') }}">Achievements</a></li>
+                                            <li><a href="{{ route('view_departmental_activities') }}">Departmental
+                                                    Activities</a></li>
+                                            <li><a href="{{ route('view_departmental_structure') }}">Departmental
+                                                    Structures</a></li>
+                                            <li><a href="{{ route('view_subject_matter_art_scheme') }}">Subject Matter
+                                                    of formulated policy</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="">

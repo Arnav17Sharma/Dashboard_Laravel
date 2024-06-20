@@ -16,14 +16,14 @@ class MemberController extends Controller
             // dd(auth()->user()->role_id);
             return view('verified_views.dashboard');
         }
-        return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+        return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
     }
 
     public function add_member()
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $role_id = Auth::user()->role_id;
         if($role_id == 1){
@@ -38,7 +38,7 @@ class MemberController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $members = DB::table('members')->orderBy('created_at', 'DESC')->get();
         $roles = DB::table('role_master')->get();
@@ -51,7 +51,7 @@ class MemberController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $role_id = Auth::user()->role_id;
         if($role_id == 1){
@@ -80,7 +80,7 @@ class MemberController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         // echo $id;
         $role_id = Auth::user()->role_id;
@@ -98,7 +98,7 @@ class MemberController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $role_id = Auth::user()->role_id;
         if($role_id == 1){
@@ -122,6 +122,13 @@ class MemberController extends Controller
                         return redirect(route('dashboard'));
     }
 
+    public function login_get()
+    {
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $data['notifications'] = $notifications;
+        return view('e&it_views.login_form', $data);
+    }
+
     public function login_post(Request $request)
     {
         
@@ -138,16 +145,16 @@ class MemberController extends Controller
             Auth::login($user); // Uses $user contructed from User Model. 
             return redirect(route('view_gallery'))->with('success', 'Logged in successfully!');
         }
-        return redirect(route('login'))->with('error', 'Wrong credentials!');
+        return redirect(route('login_get'))->with('error', 'Wrong credentials!');
     }
 
     function logout() {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         Session::flush();
         Auth::logout();
-        return redirect(route('login'));
+        return redirect(route('login_get'));
     }
 }

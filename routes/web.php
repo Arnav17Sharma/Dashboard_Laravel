@@ -366,3 +366,7 @@ Route::get('/orders', [NoticeBoardController::class, 'eit_view_orders'])->name('
 Route::get('/circulars', [NoticeBoardController::class, 'eit_view_circulars'])->name('eit_view_circulars');
 Route::get('/recruitments', [NoticeBoardController::class, 'eit_view_recruitments'])->name('eit_view_recruitments');
 Route::get('/notifications', [NoticeBoardController::class, 'eit_view_notifications'])->name('eit_view_notifications');
+
+// LOGIN FORM
+Route::get('/login', [MemberController::class, 'login_get'])->name('login_get');
+Route::post('/login', [MemberController::class, 'login_post'])->name('login_post');

@@ -12,6 +12,10 @@ class NoticeBoardController extends Controller
 {
     public function add_notice_board()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_types = DB::table('notice_type_master')->get();
         $data['all_types'] = $all_types;
         return view('verified_views.add_notice_board', $data);
@@ -19,6 +23,10 @@ class NoticeBoardController extends Controller
 
     public function add_notice_board_post(Request $request)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $request->validate([
             'type' => 'required|numeric',
             'title' => 'required',
@@ -61,6 +69,10 @@ class NoticeBoardController extends Controller
 
     public function view_notices()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 1)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -70,6 +82,10 @@ class NoticeBoardController extends Controller
 
     public function view_tenders()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 2)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -79,6 +95,10 @@ class NoticeBoardController extends Controller
 
     public function view_orders()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 3)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -88,6 +108,10 @@ class NoticeBoardController extends Controller
 
     public function view_circulars()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 4)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -97,6 +121,10 @@ class NoticeBoardController extends Controller
 
     public function view_recruitments()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 5)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -106,6 +134,10 @@ class NoticeBoardController extends Controller
 
     public function view_notifications()
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $all_notices = DB::table('notice_board')->where('type', 6)->get();
         $data['all_notices'] = $all_notices;
         $all_types = DB::table('notice_type_master')->get();
@@ -115,7 +147,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_notice_board()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -134,7 +170,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_news()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -153,7 +193,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_tenders()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -172,7 +216,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_orders()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -191,7 +239,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_circulars()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -210,7 +262,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_recruitments()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -229,7 +285,11 @@ class NoticeBoardController extends Controller
 
     public function eit_view_notifications()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -248,6 +308,10 @@ class NoticeBoardController extends Controller
 
     public function view_board_id($id)
     {
+        if(!Auth::user()){
+            // dd(auth()->user()->role_id);
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
         $total_tenders = DB::table('notice_board')->where('type', 2)->orderBy('id', 'desc')->limit(6)->get();
@@ -268,7 +332,7 @@ class NoticeBoardController extends Controller
     
     public function eit_view_notice_id($id)
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -293,7 +357,7 @@ class NoticeBoardController extends Controller
     {
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $total_tenders = DB::table('notice_board')->where('type', 2)->orderBy('id', 'desc')->limit(6)->get();
         $data['total_tenders'] = $total_tenders;
@@ -306,7 +370,7 @@ class NoticeBoardController extends Controller
 
     public function view_right_to_information()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -321,7 +385,7 @@ class NoticeBoardController extends Controller
 
     public function view_program_and_schemes()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -336,7 +400,7 @@ class NoticeBoardController extends Controller
 
     public function view_subject_matter_art_scheme()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -351,7 +415,7 @@ class NoticeBoardController extends Controller
 
     public function view_departmental_activities() 
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -366,7 +430,7 @@ class NoticeBoardController extends Controller
 
     public function view_acts_and_rules()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -381,7 +445,7 @@ class NoticeBoardController extends Controller
 
     public function view_departmental_structure()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -396,7 +460,7 @@ class NoticeBoardController extends Controller
 
     public function view_services()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -411,7 +475,7 @@ class NoticeBoardController extends Controller
 
     public function view_whos_who()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -426,7 +490,7 @@ class NoticeBoardController extends Controller
 
     public function view_achievements()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;
@@ -441,7 +505,7 @@ class NoticeBoardController extends Controller
 
     public function view_organisation_chart()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();
         $data['notices'] = $notices;

@@ -14,7 +14,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         return view('verified_views.add_gallery');
     }
@@ -23,7 +23,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         return view('verified_views.dashboard');
     }
@@ -33,7 +33,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $galleries = DB::table('gallery_main')->where('status', 1)->get();
         $data['galleries'] = $galleries;
@@ -45,7 +45,7 @@ class GalleryController extends Controller
     
     public function eit_photo_gallery()
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $galleries = DB::table('gallery_main')->where('status', 1)->get();
         $data['galleries'] = $galleries;
@@ -58,7 +58,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $galleries = DB::table('gallery_main')->where('status', 0)->get();
         $members = DB::table('members')->get();
@@ -73,7 +73,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         
         $galleries = DB::table('gallery_main')->get();
@@ -94,7 +94,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
@@ -110,7 +110,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
@@ -133,7 +133,7 @@ class GalleryController extends Controller
     
     public function eit_photo_gallery_id($id)
     {
-        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
+        $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
         $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
@@ -147,7 +147,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $request->validate([
             'thumbnail' => 'required|image',
@@ -205,7 +205,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         $request->validate([
             'id' => 'required',
@@ -249,7 +249,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         DB::table('gallery_main')->where('g_id', $id)
                 ->update([
@@ -269,7 +269,7 @@ class GalleryController extends Controller
     {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
-            return redirect(route('login'))->with('error', 'Login required to access dashboard!');
+            return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
         }
         DB::table('gallery_main')->where('g_id', $id)
                 ->update([

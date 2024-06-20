@@ -44,13 +44,14 @@
     <link rel="stylesheet" href="{{ asset('eit_assets/css/govity-responsive.css'); }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        .offering-one {
-            position: relative;
-            display: block;
-            padding-top: 100px;
-            z-index: 1;
-            padding-bottom: 60px;
-        }
+    .offering-one {
+        position: relative;
+        display: block;
+        padding-top: 100px;
+        z-index: 1;
+        padding-bottom: 60px;
+    }
+
     .search {
         padding: 6px;
         margin-right: -6px;
@@ -73,43 +74,55 @@
         content: "";
         padding: 0 4px;
     }
+
     .marquee {
-    background-color: #ddd;
-    width: 500px;
-    margin: 0 auto;
-    overflow: hidden;
-    white-space: nowrap;
+        background-color: #ddd;
+        width: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+        white-space: nowrap;
     }
+
     .marquee span {
-    display: inline-block;
-    font-size: 20px;
-    position: relative;
-    left: 100%;
-    animation: marquee 8s linear infinite;
+        display: inline-block;
+        font-size: 20px;
+        position: relative;
+        left: 100%;
+        animation: marquee 8s linear infinite;
     }
+
     .marquee:hover span {
-    animation-play-state: paused;
+        animation-play-state: paused;
     }
 
     .marquee span:nth-child(1) {
-    animation-delay: 0s;
+        animation-delay: 0s;
     }
+
     .marquee span:nth-child(2) {
-    animation-delay: 0.8s;
+        animation-delay: 0.8s;
     }
+
     .marquee span:nth-child(3) {
-    animation-delay: 1.6s;
+        animation-delay: 1.6s;
     }
+
     .marquee span:nth-child(4) {
-    animation-delay: 2.4s;
+        animation-delay: 2.4s;
     }
+
     .marquee span:nth-child(5) {
-    animation-delay: 3.2s;
+        animation-delay: 3.2s;
     }
 
     @keyframes marquee {
-    0%   { left: 100%; }
-    100% { left: -100%; }
+        0% {
+            left: 100%;
+        }
+
+        100% {
+            left: -100%;
+        }
     }
     </style>
 </head>
@@ -126,7 +139,7 @@
     <div class="page-wrapper">
         @include('e&it_views.include.header')
         @yield('content')
-        
+
         <section class="brand-one brand-two">
             <div class="container">
                 <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel owl-loaded owl-drag"
@@ -303,7 +316,7 @@
                 <!-- If we need navigation buttons -->
             </div>
         </section>
-        
+
         @include('e&it_views.include.footer')
     </div><!-- /.page-wrapper -->
 
@@ -346,9 +359,11 @@
         </div>
         <!-- /.mobile-nav__content -->
     </div>
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;"><i class="fa fa-arrow-right"></i></a>
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;"><i
+            class="fa fa-arrow-right"></i></a>
     <!-- /.mobile-nav__wrapper -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-arrow-right"></i></a>
+    
     <script src="{{ asset('eit_assets/vendors/jquery/jquery-3.6.0.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/bootstrap/js/bootstrap.bundle.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/jarallax/jarallax.min.js'); }}"></script>
