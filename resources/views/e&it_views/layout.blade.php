@@ -136,7 +136,7 @@
     <!-- /.preloader -->
 
 
-    <div class="page-wrapper">
+    <div class="page-wrapper" id="wrapper">
         @include('e&it_views.include.header')
         @yield('content')
 
@@ -363,7 +363,15 @@
             class="fa fa-arrow-right"></i></a>
     <!-- /.mobile-nav__wrapper -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-arrow-right"></i></a>
-    
+    <script>
+    let cont = document.getElementById("wrapper");
+    let nav = document.getElementById("navbar");
+    function goHome(size) {
+        // Set value of the parameter as fontSize
+        cont.style.fontSize = size;
+        nav.style.fontSize = size;
+    }
+    </script>
     <script src="{{ asset('eit_assets/vendors/jquery/jquery-3.6.0.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/bootstrap/js/bootstrap.bundle.min.js'); }}"></script>
     <script src="{{ asset('eit_assets/vendors/jarallax/jarallax.min.js'); }}"></script>

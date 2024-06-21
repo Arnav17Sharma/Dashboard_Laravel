@@ -154,9 +154,9 @@ Route::get('/program_and_schemes', [NoticeBoardController::class, 'view_program_
 Route::get('/right_to_information', [NoticeBoardController::class, 'view_right_to_information'])->name('view_right_to_information');
 Route::get('/subject_matter_art_scheme', [NoticeBoardController::class, 'view_subject_matter_art_scheme'])->name('view_subject_matter_art_scheme');
 Route::get('/whos_who', [NoticeBoardController::class, 'view_whos_who'])->name('view_whos_who');
-// Route::get('/contact_us', [NoticeBoardController::class, 'view_contact_us'])->name('view_contact_us');
 Route::get('/organisation_chart', [NoticeBoardController::class, 'view_organisation_chart'])->name('view_organisation_chart');
 Route::get('/achievements', [NoticeBoardController::class, 'view_achievements'])->name('view_achievements');
+// Route::get('/contact_us', [NoticeBoardController::class, 'view_contact_us'])->name('view_contact_us');
 
 Route::get('/chips_activity', function () {
     return view('e&it_views.chips_activity');
@@ -281,6 +281,62 @@ Route::get('/geographic-info-system-div', function () {
 Route::get('/incubator-cum-accelerator-institute', function () {
     return view('e&it_views.Incubator');
 })->name('e&it_views.Incubator');
+
+Route::get('/help', function () {
+    return view('e&it_views.help');
+})->name('e&it_views.help');
+
+Route::get('/terms-of-use', function () {
+    return view('e&it_views.terms_of_use');
+})->name('e&it_views.terms_of_use');
+
+Route::get('/terms-and-conditions', function () {
+    return view('e&it_views.terms_and_conditions');
+})->name('e&it_views.terms_and_conditions');
+
+Route::get('/site-map', function () {
+    return view('e&it_views.site_map');
+})->name('e&it_views.site_map');
+
+Route::get('/accessibility', function () {
+    return view('e&it_views.Accessibility');
+})->name('e&it_views.Accessibility');
+
+Route::get('/copyright', function () {
+    return view('e&it_views.Copyright');
+})->name('e&it_views.Copyright');
+
+Route::get('/disclaimer', function () {
+    return view('e&it_views.Disclaimer');
+})->name('e&it_views.Disclaimer');
+
+Route::get('/hyperlink', function () {
+    return view('e&it_views.Hyperlink');
+})->name('e&it_views.Hyperlink');
+
+Route::get('/privacy', function () {
+    return view('e&it_views.Privacy');
+})->name('e&it_views.Privacy');
+
+Route::get('/feedback', function () {
+    return view('e&it_views.Feedback');
+})->name('e&it_views.Feedback');
+
+Route::get('/iso-9001-2000-certified', function () {
+    return view('e&it_views.ISO');
+})->name('e&it_views.ISO');
+
+Route::get('/related-links', function () {
+    return view('e&it_views.related_links');
+})->name('e&it_views.related_links');
+
+Route::get('/archive', function () {
+    return view('e&it_views.Archive');
+})->name('e&it_views.Archive');
+
+Route::get('/best-practice-videos', function () {
+    return view('e&it_views.Best');
+})->name('e&it_views.Best');
 
 // Route::get('/acts_and_rules', function () {
 //     return view('e&it_views.acts_and_rules');

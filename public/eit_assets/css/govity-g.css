@@ -5243,7 +5243,7 @@ ul {
 .footer-widget__Contact-list {
   position: relative;
   display: block;
-  padding-top: 22px;
+  padding-top: 5px;
 }
 
 .footer-widget__Contact-list li {
@@ -5255,6 +5255,7 @@ ul {
 .footer-widget__Contact-list li .icon {
   font-size: 16px;
   margin-right: 12px;
+  text-align: right;
 }
 
 .footer-widget__Contact-list li:first-child .icon {
@@ -5269,6 +5270,7 @@ ul {
 .footer-widget__Contact-list li .text p {
   font-size: 16px;
   font-weight: 700;
+  text-align: left;
   letter-spacing: var(--govity-letter-spacing-two);
 }
 
@@ -5348,7 +5350,7 @@ ul {
 }
 
 .footer-widget__link-list li + li {
-  margin-top: 8px;
+  margin-top: 15px;
 }
 
 .footer-widget__link-list li a {

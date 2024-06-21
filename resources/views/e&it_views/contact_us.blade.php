@@ -77,7 +77,8 @@
                                 </div>
                                 <div class="content">
                                     <p>Have any Question?</p>
-                                    <h4><a href="tel:+9212340800"><span>Free</span> +92 (1234) 0800</a></h4>
+                                    <h4><a href="tel:+917714014158">+91 (771) 4014158 /4023123</a>
+                                    </h4>
                                 </div>
                             </li>
                             <li>
@@ -86,7 +87,7 @@
                                 </div>
                                 <div class="content">
                                     <p>Write Email</p>
-                                    <h4><a href="mailto:needhelp@company.com">needhelp@company.com</a></h4>
+                                    <h4><a href="mailto:ceochips@nic.in">ceochips@nic.in</a></h4>
                                 </div>
                             </li>
                             <li>
@@ -95,7 +96,9 @@
                                 </div>
                                 <div class="content">
                                     <p>Visit Anytime</p>
-                                    <h4>30 broklyn golden street. New York</h4>
+                                    <h4>3rd Floor, State Data Centre Building,
+                                        Opp. <br>New Circuit House,
+                                        Civil Lines, Raipur</h4>
                                 </div>
                             </li>
                         </ul>
@@ -166,7 +169,8 @@
                         <div class="team-one__content">
                             <h3 class="team-one__name"><a href="team-details.html">Mr. Ritesh Kumar Agarwal (IAS)</a>
                             </h3>
-                            <p class="team-one__sub-title">Joint Secretary (Department of Electronics & Information Technology)</p>
+                            <p class="team-one__sub-title">Joint Secretary (Department of Electronics & Information
+                                Technology)</p>
                             <!--  <div class="team-one__social">
                                         <a href="#"><i class="fab fa-twitter"></i></a>
                                         <a href="#"><i class="fab fa-facebook"></i></a>

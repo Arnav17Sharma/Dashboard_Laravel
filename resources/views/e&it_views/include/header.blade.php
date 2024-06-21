@@ -23,13 +23,13 @@
                     <li><a href="#"><i class="fa fa-eye-slash"></i> Screen Reader Access</a></li>
                     <li><a href="#"><i class="fa fa-language"></i> English/हिन्दी</a></li>
                     <li>
-                        <a href="#">A-</a>
+                        <button href="#" onclick="goHome('10px')">A-</button>
                     </li>
                     <li>
-                        <a href="#">A</a>
+                        <button href="#" onclick="goHome('16px')">A</button>
                     </li>
                     <li>
-                        <a href="#">A+</a>
+                        <button href="#" onclick="goHome('22px')">A+</button>
                     </li>
                 </ul>
             </div>
@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-    <nav class="main-menu main-menu-three">
+    <nav class="main-menu main-menu-three" id="navbar">
         <div class="main-menu-three__wrapper">
             <div class="container">
                 <div class="main-menu-three__wrapper-inner">
