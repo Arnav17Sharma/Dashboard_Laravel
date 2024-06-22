@@ -267,7 +267,6 @@ class NoticeBoardController extends Controller
 
     public function eit_view_notifications()
     {
-        
         $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
         $data['notifications'] = $notifications;
         $notices = DB::table('notice_board')->orderBy('id', 'desc')->limit(6)->get();

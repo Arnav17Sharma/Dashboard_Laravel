@@ -426,3 +426,14 @@ Route::get('/notifications', [NoticeBoardController::class, 'eit_view_notificati
 // LOGIN FORM
 Route::get('/login', [MemberController::class, 'login_get'])->name('login_get');
 Route::post('/login', [MemberController::class, 'login_post'])->name('login_post');
+
+
+
+
+
+
+
+
+// API ROUTES
+Route::get('/api/gallery', [GalleryController::class, 'api_eit_photo_gallery'])->name('api_eit_photo_gallery');
+Route::get('/api/gallery/{id}', [GalleryController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
