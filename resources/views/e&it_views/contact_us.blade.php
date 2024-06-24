@@ -22,7 +22,6 @@
     <div class="container">
         <div class="contact-page__top">
             <div class="row">
-
                 <div class="col-xl-6 col-lg-6">
                     <div class="section-title text-left">
                         <div class="section-title__icon">
@@ -31,8 +30,21 @@
                         <h2 class="section-title__title">Get in touch now</h2>
                     </div>
                     <div class="contact-one__form-box">
-                        <form action="assets/inc/sendemail.php.html" class="contact-one__form contact-form-validated"
-                            novalidate="novalidate">
+                        @if($errors->any())
+                        <div class="col-12">
+                            @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">{{$error}}</div>
+                            @endforeach
+                        </div>
+                        @endif
+                        @if(session()->has('error'))
+                        <div class="col-8 alert alert-danger ms-auto me-auto">{{session('error')}}</div>
+                        @endif
+                        @if(session()->has('success'))
+                        <div class="alert alert-success">{{session('success')}}</div>
+                        @endif
+                        <form action="{{ route('view_message_id_post') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="contact-one__input-box">
@@ -51,8 +63,7 @@
                                         <textarea name="message" placeholder="Write Comment"></textarea>
                                     </div>
                                     <div class="contact-one__btn-box">
-                                        <button type="submit" class="thm-btn contact-one__btn">Send a
-                                            Message</button>
+                                        <input type="submit" class="thm-btn contact-one__btn" value="Message">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +77,7 @@
                             <div class="section-title__icon">
                                 <span class="fa fa-star"></span>
                             </div>
-                            <h2 class="section-title__title">Walk A Path</h2>
+                            <h2 class="section-title__title">Contact Us</h2>
                         </div>
                         <!-- <p class="contact-page__text">Lorem ipsum dolor sit amet, consectetur notted adipis not
                                     icing elit sed do eiusmod tempor incididunt.</p> -->

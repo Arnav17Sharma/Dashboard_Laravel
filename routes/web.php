@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NoticeBoardController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +109,16 @@ Route::get('/admin/view_recruitments', [NoticeBoardController::class, 'view_recr
 Route::get('/admin/view_notifications', [NoticeBoardController::class, 'view_notifications'])->name('view_notifications');
 Route::get('/admin/view_board/{id}', [NoticeBoardController::class, 'view_board_id'])->name('view_board_id');
 // NOTICE BOARD ROUTES ENDS
+
+// MESSAGES ROUTES STARTS
+
+Route::get('/admin/view_messages', [MessageController::class, 'view_messages'])->name('view_messages');
+Route::get('/admin/message/{id}', [MessageController::class, 'view_message_id'])->name('view_message_id');
+Route::get('/contact_us', [MessageController::class, 'view_contact_us'])->name('view_contact_us');
+Route::post('/contact_us', [MessageController::class, 'view_message_id_post'])->name('view_message_id_post');
+
+// MESSAGES ROUTES ENDS
+
 
 
 // ADMIN ROUTES ENDS
@@ -398,9 +409,6 @@ Route::get('/best-practice-videos', function () {
 //     return view('e&it_views.notice_board');
 // })->name('e&it_views.notice_board');
 
-Route::get('/contact_us', function () {
-    return view('e&it_views.contact_us');
-})->name('e&it_views.contact_us');
 
 // Route::get('/organisation_chart', function () {
 //     return view('e&it_views.organisation_chart');
@@ -437,3 +445,11 @@ Route::post('/login', [MemberController::class, 'login_post'])->name('login_post
 // API ROUTES
 Route::get('/api/gallery', [GalleryController::class, 'api_eit_photo_gallery'])->name('api_eit_photo_gallery');
 Route::get('/api/gallery/{id}', [GalleryController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+
+
+// Route::get('/api/notices/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+// Route::get('/api/news/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+// Route::get('/api/tenders/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+// Route::get('/api/circulars/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+// Route::get('/api/recruitments/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
+// Route::get('/api/notifications/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');

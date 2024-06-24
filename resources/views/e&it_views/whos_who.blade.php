@@ -40,30 +40,30 @@
                                         <th class="font-weight-bold">Designation</th>
                                         <th class="font-weight-bold">Present Address/<br>Room no at ministry</th>
                                         <th class="font-weight-bold">Office-Telephone number/Fax Number</th>
-                                        <th class="font-weight-bold">Resident address/Email</th>
+                                        <!-- <th class="font-weight-bold">Resident address/Email</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Niharika Barik Singh</td>
                                         <td>Principal Secretary (ENIT)</td>
-                                        <td>M-05/11</td>
-                                        <td>0771-2221311, 2510793</td>
-                                        <td>D-1/5, Officers Colony, Devendra Nagar, Raipur</td>
+                                        <td>S-03/10</td>
+                                        <td>0771-2510363, 2510366</td>
+                                        <!-- <td>D-1/5, Officers Colony, Devendra Nagar, Raipur</td> -->
                                     </tr>
                                     <tr>
                                         <td>Ritesh Kumar Agarwal</td>
                                         <td>Joint Secretary</td>
-                                        <td>S-03/40</td>
-                                        <td>0771-2510330</td>
-                                        <td>D-2/40, New Officers Colony, Devendra Nagar, Raipur</td>
+                                        <td>S-03/48</td>
+                                        <td>0771-2510150</td>
+                                        <!-- <td>D-2/40, New Officers Colony, Devendra Nagar, Raipur</td> -->
                                     </tr>
                                     <tr>
                                         <td>Devlal Bharti</td>
                                         <td>Upper Secretary, IT Dept.</td>
-                                        <td>M-05/01</td>
-                                        <td>0771-2510794</td>
-                                        <td>G-6/213, GAD Complex, Kabir Nagar, Raipur</td>
+                                        <td>AD-03/28</td>
+                                        <td>+91 9425215662</td>
+                                        <!-- <td>G-6/213, GAD Complex, Kabir Nagar, Raipur</td> -->
                                     </tr>
                                 </tbody>
                             </table>

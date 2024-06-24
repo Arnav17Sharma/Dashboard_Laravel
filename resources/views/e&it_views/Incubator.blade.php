@@ -34,7 +34,7 @@
                         <div class="accrodion-grp " data-grp-name="">
                             <div class="accrodion active">
                                 <div class="accrodion-title" style="margin-top:16px; margin-bottom:16px;">
-                                    <h4>Geographic Information Systems Division -</h4>
+                                    <h4>Incubator-cum-Accelerator Institute (36Inc) -</h4>
                                 </div>
                                 <div class="accrodion-content" style="">
                                     <div class="inner">

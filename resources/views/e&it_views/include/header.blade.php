@@ -145,7 +145,7 @@
                                 <a href="{{ route('view_right_to_information') }}">Right to Information </a>
                             </li>
                             <li class="">
-                                <a href="{{ route('e&it_views.contact_us') }}">Contact Us </a>
+                                <a href="{{ route('view_contact_us') }}">Contact Us </a>
                             </li>
                         </ul>
                     </div>

@@ -21,7 +21,12 @@
                         <span class="nxl-micon"><i class="feather-airplay"></i></span>
                         <span class="nxl-mtext">Dashboard</span>
                     </a>
-                    
+                </li>
+                <li class="nxl-item">
+                    <a href="{{ route('view_messages') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-bell"></i></span>
+                        <span class="nxl-mtext">View Messages</span>
+                    </a>
                 </li>
                 @if(auth()->user()->role_id == 1)
                 <li class="nxl-item nxl-hasmenu">
