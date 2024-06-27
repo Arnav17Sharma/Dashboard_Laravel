@@ -143,14 +143,6 @@ Route::get('/user/login', function () {
 Route::post('user/login', [MemberController::class, 'login_post'])->name('login_post');
 
 
-
-
-
-
-
-
-
-
 // E & IT
 
 // Route::get('/home', function () {
@@ -443,9 +435,6 @@ Route::post('/login', [MemberController::class, 'login_post'])->name('login_post
 
 
 // API ROUTES
-Route::get('/api/gallery', [GalleryController::class, 'api_eit_photo_gallery'])->name('api_eit_photo_gallery');
-Route::get('/api/gallery/{id}', [GalleryController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
-
 
 // Route::get('/api/notices/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');
 // Route::get('/api/news/', [NoticeBoardController::class, 'api_eit_photo_gallery_id'])->name('api_eit_photo_gallery_id');

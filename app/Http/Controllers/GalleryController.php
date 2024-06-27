@@ -52,18 +52,7 @@ class GalleryController extends Controller
         return view('e&it_views.view_gallery', $data);
     }
     
-    public function api_eit_photo_gallery()
-    {
-        $galleries = DB::table('gallery_main')->where('status', 1)->get();
-        $data = [];
-        foreach($galleries as $gallery) {
-            array_push($data, [
-                "gallery_name" => $gallery->g_name,
-                "thumbnail_url" => $gallery->thumbnail
-            ]);
-        }
-        return $data;
-    }
+    
     
 
     
@@ -154,22 +143,6 @@ class GalleryController extends Controller
         $data['all_photos'] = $all_photos;
         $data['id'] = $id;
         return view('e&it_views.view_gallery_id', $data);
-    }
-    
-    public function api_eit_photo_gallery_id($id)
-    {
-        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)->get();
-        $curr_gallery = DB::table('gallery_main')->where('g_id', $id)->first();
-        $data['gallery_id'] = $id;
-        $data['gallery_name'] = $curr_gallery->g_name;
-        $data['user_id'] = $curr_gallery->user_id;
-        $data['created_at'] = $curr_gallery->created_at;
-        $data['thumbnail'] = $curr_gallery->thumbnail;
-        $data['photos'] = [];
-        foreach($all_photos as $photo) {
-            array_push($data['photos'], $photo->p_url);
-        }
-        return $data;
     }
 
     public function add_gallery_post(Request $request)
