@@ -44,7 +44,16 @@ Route::get("/members", [DeviceController::class, 'api_get_members'])->name('api_
 Route::get("/member/{id}", [DeviceController::class, 'api_get_member_id'])->name('api_get_member_id');
 // GET METHOD ROUTES ENDS
 
-
 // POST METHOD ROUTES STARTS
-
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get("/me", [DeviceController::class, 'me'])->name('me');
+    Route::post('/create_member', [DeviceController::class, 'api_create_member'])->name('api_create_member');
+    Route::post('/update_member/{id}', [DeviceController::class, 'api_update_member'])->name('api_update_member');
+    Route::post('/add_gallery', [DeviceController::class, 'api_add_gallery'])->name('api_add_gallery');
+    Route::post('/add_photos', [DeviceController::class, 'api_add_photos'])->name('api_add_photos');
+    Route::get('/accept/{id}', [DeviceController::class, 'api_accept'])->name('api_accept');
+    Route::get('/reject/{id}', [DeviceController::class, 'api_reject'])->name('api_reject');
+    Route::get('/logout', [DeviceController::class, 'api_logout'])->name('api_logout');
+});
+Route::post('/login', [DeviceController::class, 'api_login'])->name('api_login');
 // POST METHOD ROUTES ENDS

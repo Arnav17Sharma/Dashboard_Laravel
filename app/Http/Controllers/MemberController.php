@@ -148,7 +148,8 @@ class MemberController extends Controller
         return redirect(route('login_get'))->with('error', 'Wrong credentials!');
     }
 
-    function logout() {
+    function logout() 
+    {
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
             return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');

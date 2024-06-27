@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Session;
 
@@ -89,7 +90,6 @@ class DeviceController extends Controller
         }
         return $data;
     }
-    
     public function api_tenders() {
         $total_tenders = DB::table('notice_board')->where('type', 2)->orderBy('id', 'desc')->limit(6)->get();
         $data = [];
@@ -107,7 +107,6 @@ class DeviceController extends Controller
         }
         return $data;
     }
-
     public function api_orders() {
         $total_orders = DB::table('notice_board')->where('type', 3)->orderBy('id', 'desc')->limit(6)->get();
         $data = [];
@@ -125,7 +124,6 @@ class DeviceController extends Controller
         }
         return $data;
     }
-
     public function api_circulars() {
         $total_circulars = DB::table('notice_board')->where('type', 4)->orderBy('id', 'desc')->limit(6)->get();
         $data = [];
@@ -143,7 +141,6 @@ class DeviceController extends Controller
         }
         return $data;
     }
-
     public function api_recruitments() {
         $total_recruitments = DB::table('notice_board')->where('type', 5)->orderBy('id', 'desc')->limit(6)->get();
         $data = [];
@@ -161,7 +158,6 @@ class DeviceController extends Controller
         }
         return $data;
     }
-
     public function api_notifications() {
         $total_notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(6)->get();
         $data = [];
@@ -179,24 +175,294 @@ class DeviceController extends Controller
         }
         return $data;
     }
-
     public function api_get_types() {
         $all_types = DB::table('notice_type_master')->get();
         return $all_types;
     }
-
     public function api_get_member_roles() {
         $roles = DB::table('role_master')->get();
         return $roles;
     }
-
     public function api_get_members() {
         $members = DB::table('members')->orderBy('created_at', 'DESC')->get();
         return $members;
     }
-
     public function api_get_member_id($id) {
         $member_data = DB::table('members')->where('id', $id)->first();
         return $member_data;
+    }
+
+
+    public function api_login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $response['email'] = $request->email;
+
+        if($validator->fails()) {
+            $response["message"] = $validator->errors();
+            $response["success"] = false;
+            return $response;
+        }
+
+        $user = User::where([
+            'email'=> $request->email,
+            'password'=> $request->password,
+        ])->first();
+        if($user)
+        {
+            Auth::login($user);
+            $token = $user->createToken('auth_token')->plainTextToken;
+            return response()->json([
+                'access_token' => $token,
+                'token_type' => 'Bearer',
+            ]);
+            // $response['token'] = $token;
+            // $response['token_type'] = 'Bearer';
+            $response["success"] = true; 
+            $response["message"] = "Logged in for ".$response['email']." !"; 
+            return $response;
+        }
+        $response["success"] = false;
+        $response["message"] = "Wrong credentials"; 
+        return $response;
+    }
+    function api_logout() {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        Session::flush();
+        Auth::guard('sanctum')->user()->tokens()->delete();
+        $response["message"] = "Logged out!";
+        return $response;
+    }
+    public function me(Request $request) {
+        return $request->user();
+    }
+    public function api_add_gallery(Request $request) {
+        if(!auth()->user()) {
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+
+        $validator = Validator::make($request->all(), [
+            'thumbnail' => 'required|image',
+            'name' => 'required'
+        ]);
+        if($validator->fails()) {
+            $response["message"] = $validator->errors();
+            return $response;
+        }
+
+        $curr_gallery = DB::table('gallery_main')->insertGetId([
+            'g_name' => $request->name,
+            'thumbnail' => $request->thumbnail,
+            'user_id' => auth()->user()->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        // $curr_gallery = DB::table('gallery_main')->latest('created_at')->first();
+        $filename = time().'-img.'.$request->file('thumbnail')->getClientOriginalExtension();
+        $request->file('thumbnail')->storeAs('public/uploads/gallery/'.$curr_gallery, $filename);
+
+        if(Auth::user()->role_id == 1) {
+            DB::table('gallery_photos_main')->insert([
+                'g_id' => $curr_gallery,
+                'p_url' => 'storage/uploads/gallery/'.$curr_gallery.'/'.$filename,
+                'created_at' => date('Y-m-d H:i:s'),
+                'user_id' => Auth::user()->id,
+                'status' => 1,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+            DB::table('gallery_main')->where('g_id', $curr_gallery)
+                ->update([
+                                    'thumbnail' => 'storage/uploads/gallery/'.$curr_gallery.'/'.$filename,
+                                    'status' => 1,
+                                    'updated_at' => date('Y-m-d H:i:s')
+                                ]);
+                            }
+        else
+        {
+            DB::table('gallery_photos_main')->insert([
+                'g_id' => $curr_gallery,
+                'p_url' => 'storage/uploads/gallery/'.$curr_gallery.'/'.$filename,
+                'created_at' => date('Y-m-d H:i:s'),
+                'user_id' => Auth::user()->id,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+            DB::table('gallery_main')->where('g_id', $curr_gallery)
+                ->update([
+                                    'thumbnail' => 'storage/uploads/gallery/'.$curr_gallery.'/'.$filename,
+                                    'updated_at' => date('Y-m-d H:i:s')
+                                ]);
+        }
+        $response["message"] = "Added new Gallery named ".$request->name." stored at ".'storage/uploads/gallery/'.$curr_gallery.'/'.$filename;
+        return $response;
+    }
+
+    public function api_add_photos(Request $request) 
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'images.*' => 'required|file|mimes:jpg,png,jpeg,avif,gif,webp',
+        ]);
+        if($validator->fails()) {
+            $response['message'] = $validator->errors();
+            return $response;
+        }
+        $start = 0;
+        $response["files"] = [];
+        foreach($request->file('images') as $file)
+        {
+            $filename = $start.time().'-img.'.$file->getClientOriginalExtension();
+            $file->storeAs('public/uploads/gallery/'.$request->id, $filename);
+            if(Auth::user()->role_id == 1){
+                DB::table('gallery_photos_main')->insert([
+                    'g_id' => $request->id,
+                    'p_url' => 'storage/uploads/gallery/'.$request->id.'/'.$filename,
+                    'status' => 1,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
+                array_push($response["files"], 'storage/uploads/gallery/'.$request->id.'/'.$filename);
+            }
+            if(Auth::user()->role_id == 2){
+                DB::table('gallery_main')->where('g_id', $request->id)
+                ->update([
+                    'status' => 0,
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
+                DB::table('gallery_photos_main')->insert([
+                    'g_id' => $request->id,
+                    'p_url' => 'storage/uploads/gallery/'.$request->id.'/'.$filename,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
+                array_push($response["files"], 'storage/uploads/gallery/'.$request->id.'/'.$filename);
+            }
+            // echo $filename;
+            $start += 1;
+        }
+        $response["message"] = "Photos added to current gallery!";
+        return $response;
+    }
+
+    public function api_accept($id)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        if(Auth::user()->role_id != 1) {
+            $response["message"] = 'Permissions denied!';
+        }
+        DB::table('gallery_main')->where('g_id', $id)
+                ->update([
+                                    'status' => 1,
+                                    'updated_at' => date('Y-m-d H:i:s')
+                                ]);
+        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)
+        // foreach($all_photos as )
+        ->update([
+            'status' => 1,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        $response["message"] = "Gallery ".$id." accepted by admin!";
+        return $response;
+    }
+
+    public function api_reject($id) 
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        if(Auth::user()->role_id != 1) {
+            $response["message"] = 'Permissions denied!';
+        }
+        DB::table('gallery_main')->where('g_id', $id)
+                ->update([
+                                    'status' => 2,
+                                    'updated_at' => date('Y-m-d H:i:s')
+                                ]);
+        $all_photos = DB::table('gallery_photos_main')->where('g_id', $id)
+        // foreach($all_photos as )
+        ->update([
+            'status' => 2,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        $response["message"] = "Gallery ".$id." rejected by admin!";
+        return $response;
+    }
+
+    public function api_update_member(Request $request, $id = null)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|',
+                'phone' => 'required|numeric',
+                'role' => 'required|numeric'
+            ]);
+            DB::table('members')->where('id', $id)
+                                ->update([
+                                    'name' => $request->name,
+                                    'email' => $request->email,
+                                    'phone' => $request->phone,
+                                    'role_id' => $request->role,
+                                    'updated_at' => date('Y-m-d H:i:s')
+                                ]);
+            $response["message"] = "Updated member details";
+            return $response;
+        }
+        $response["message"] = "Permissions denied!";
+        return $response;
+    }
+
+    public function api_create_member(Request $request)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1){
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'password' => 'required',
+                'email' => 'required|email|unique:members',
+                'phone' => 'required|min:11|numeric',
+                'role' => 'required|numeric'
+            ]);
+            if($validator->fails()) {
+                $response["message"] = $validator->errors();
+                return $response;
+            }
+            DB::table('members')->insert([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'phone' => $request->phone,
+                'role_id' => $request->role,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+            $response["message"] = 'Member added successfully!';
+            return $response;
+        }
+        $response["message"] = "Permissions denied!";
+        return $response;
     }
 }

@@ -17,9 +17,9 @@ use App\Http\Controllers\MessageController;
 |
 */
 
-Route::get('/', function () {
-    return view('user_views.home');
-});
+// Route::get('/', function () {
+//     return view('user_views.home');
+// });
 
 // ADMIN ROUTES STARTS
 Route::get('/admin/dashboard', [MemberController::class, 'dashboard'])->name('dashboard');
@@ -148,6 +148,7 @@ Route::post('user/login', [MemberController::class, 'login_post'])->name('login_
 // Route::get('/home', function () {
 //     return view('e&it_views.home');
 // })->name('e&it_views.home');
+Route::get('/', [NoticeBoardController::class, 'view_home'])->name('view_home1');
 Route::get('/home', [NoticeBoardController::class, 'view_home'])->name('view_home');
 Route::get('/acts_and_rules', [NoticeBoardController::class, 'view_acts_and_rules'])->name('view_acts_and_rules');
 Route::get('/departmental_activities', [NoticeBoardController::class, 'view_departmental_activities'])->name('view_departmental_activities');

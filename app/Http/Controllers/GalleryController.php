@@ -39,10 +39,7 @@ class GalleryController extends Controller
         $data['galleries'] = $galleries;
         return view('verified_views.view_gallery', $data);
     }
-    
-    
-    
-    
+
     public function eit_photo_gallery()
     {
         $notifications = DB::table('notice_board')->where('type', 6)->orderBy('id', 'desc')->limit(3)->get();
@@ -51,10 +48,6 @@ class GalleryController extends Controller
         $data['galleries'] = $galleries;
         return view('e&it_views.view_gallery', $data);
     }
-    
-    
-    
-
     
     public function view_pending_requests()
     {
@@ -252,6 +245,9 @@ class GalleryController extends Controller
         if(!Auth::user()){
             // dd(auth()->user()->role_id);
             return redirect(route('login_get'))->with('error', 'Login required to access dashboard!');
+        }
+        if(Auth::user()->role_id != 1) {
+            return redirect(route('view_gallery'))->with('error', 'Permissions denied!');
         }
         DB::table('gallery_main')->where('g_id', $id)
                 ->update([
