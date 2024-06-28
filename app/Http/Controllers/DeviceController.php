@@ -18,7 +18,8 @@ class DeviceController extends Controller
         foreach($galleries as $gallery) {
             array_push($data, [
                 "gallery_name" => $gallery->g_name,
-                "thumbnail_url" => $gallery->thumbnail
+                "thumbnail_url" => $gallery->thumbnail,
+                "created_at" => $gallery->created_at                
             ]);
         }
         return $data;
@@ -229,7 +230,9 @@ class DeviceController extends Controller
         $response["message"] = "Wrong credentials"; 
         return $response;
     }
-    function api_logout() {
+
+    public function api_logout()
+    {
         if(!Auth::user()){
             $response["message"] = "User not logged in!!";
             return $response;
@@ -239,10 +242,18 @@ class DeviceController extends Controller
         $response["message"] = "Logged out!";
         return $response;
     }
-    public function me(Request $request) {
+
+    public function me(Request $request)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
         return $request->user();
     }
-    public function api_add_gallery(Request $request) {
+
+    public function api_add_gallery(Request $request)
+    {
         if(!auth()->user()) {
             $response["message"] = "User not logged in!!";
             return $response;
@@ -463,6 +474,130 @@ class DeviceController extends Controller
             return $response;
         }
         $response["message"] = "Permissions denied!";
+        return $response;
+    }
+
+    public function api_view_pending_requests()
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        if(Auth::user()->id == 2) {
+            $response["message"] = "permissions denied!";
+            return $response;
+        } 
+        $galleries = DB::table('gallery_main')->where('status', 0)->get();
+        $members = DB::table('members')->get();
+        $data['galleries'] = $galleries;
+        $data['members'] = $members;
+        $response["data"] = [];
+        foreach($galleries as $gallery) {
+            array_push($response['data'], [
+                "gallery_id" => $gallery->g_id,
+                "gallery_name" => $gallery->g_name,
+                "thumbnail_url" => $gallery->thumbnail,
+                "created_at" => $gallery->created_at,
+                "author_id" => $gallery->user_id,
+                "author_name" => DB::table('members')->where('id', $gallery->user_id)->first()->name,
+                "author_email" => DB::table('members')->where('id', $gallery->user_id)->first()->email,
+            ]);
+        }
+        $response["message"] = "Success!";
+        return $response;
+    }
+
+    public function api_my_posts()
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $galleries = DB::table('gallery_main')->where("user_id", Auth::user()->id)->get();
+        $response["data"] = [];
+        foreach($galleries as $gallery) {
+            array_push($response['data'], [
+                "gallery_id" => $gallery->g_id,
+                "gallery_name" => $gallery->g_name,
+                "thumbnail_url" => $gallery->thumbnail,
+                "created_at" => $gallery->created_at,
+                "author_id" => $gallery->user_id,
+                "author_name" => DB::table('members')->where('id', $gallery->user_id)->first()->name,
+                "author_email" => DB::table('members')->where('id', $gallery->user_id)->first()->email,
+            ]);
+        }
+        $response["message"] = "Success!";
+        return $response;
+    }
+
+    public function api_view_messages()
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $messages = DB::table('contact_us_main')->orderBy('message_id', 'desc')->get();
+        $response['data'] = $messages;
+        $response['message'] = "Success!";
+        return $response;
+    }
+
+    public function api_view_message_id($id)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $message_data = DB::table('contact_us_main')->where('message_id', $id)->first();
+        $response['data'] = $message_data;
+        $response["message"] = "Success!";
+        return $response;
+    }
+
+    public function api_add_notice(Request $request)
+    {
+        if(!Auth::user()){
+            $response["message"] = "User not logged in!!";
+            return $response;
+        }
+        $validator = Validator::make($request->all(), [
+            'type' => 'required|numeric',
+            'title' => 'required',
+            'department' => 'required',
+            'url' => 'nullable',
+            'files.*' => 'nullable|required_without:url|file|mimes:pdf',
+        ]);
+        if($validator->fails()) {
+            $response["message"] = $validator->errors();
+            return $response;
+        }
+        
+        $curr_notice = DB::table('notice_board')->insertGetId([
+            'type' => $request->type,
+            'title' => $request->title,
+            'department' => $request->department,
+        ]);
+        DB::table('notice_board')->where('id', $curr_notice)
+            ->update([
+                'url' => $request->url,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+        if ($request->hasFile('files')) {
+            $start = 1; 
+            foreach($request->file('files') as $file)
+            {
+                $filename = $file->getClientOriginalName().'.'.$file->getClientOriginalExtension();
+                $file->storeAs('public/uploads/notice_board/'.$curr_notice, $filename);
+                $start += 1;
+                DB::table('board_attachments')->insert([
+                    'notice_board_id' => $curr_notice,
+                    'attachment_url' => 'storage/uploads/notice_board/'.$curr_notice.'/'.$filename,                        
+                ]);
+            }
+        }
+        $response["notice_data"] = DB::table('notice_board')->where('id', $curr_notice)->first();
+        $response["attachments"] = DB::table('board_attachments')->where('notice_board_id', $curr_notice)->get();
+        $response["message"] = "Success!";
         return $response;
     }
 }
