@@ -402,7 +402,6 @@ Route::get('/best-practice-videos', function () {
 //     return view('e&it_views.notice_board');
 // })->name('e&it_views.notice_board');
 
-
 // Route::get('/organisation_chart', function () {
 //     return view('e&it_views.organisation_chart');
 // })->name('e&it_views.organisation_chart');
